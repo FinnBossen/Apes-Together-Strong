@@ -4,11 +4,16 @@
     <projectFile>Intermediate/ProjectFiles/ApesStrongTogether.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="" />
+    <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Controller.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -34,6 +39,7 @@
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oXQRzvAkaNCA6QQ7NCyDYvVzie" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -168,6 +174,7 @@
       <workItem from="1613495051169" duration="3947000" />
       <workItem from="1613499177190" duration="661000" />
       <workItem from="1613501594530" duration="204000" />
+      <workItem from="1613503024690" duration="175000" />
     </task>
     <servers />
   </component>
@@ -176,4 +183,15 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
 </project>

@@ -50,11 +50,11 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	GetCharacterMovement()->bOrientRotationToMovement = false;
 
 	// Configure character movement
-	GetCharacterMovement()->GravityScale = 0.0f;
-	GetCharacterMovement()->AirControl = 0.80f;
-	GetCharacterMovement()->JumpZVelocity = 1000.f;
-	GetCharacterMovement()->GroundFriction = 3.0f;
-	GetCharacterMovement()->MaxWalkSpeed = 600.0f;
+	 GetCharacterMovement()->GravityScale = 0.0f;
+	 GetCharacterMovement()->AirControl = 0.80f;
+	 GetCharacterMovement()->JumpZVelocity = 1000.f;
+	 GetCharacterMovement()->GroundFriction = 3.0f;
+	 GetCharacterMovement()->MaxWalkSpeed = 600.0f;
 	GetCharacterMovement()->MaxFlySpeed = 600.0f;
 
 	// Lock character motion onto the XZ plane, so the character can't move in or out of the screen
@@ -128,7 +128,7 @@ void AApesStrongTogetherCharacter::MoveVertical(float Value)
 
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Bka Bla want to fly high high in the sky"	));
 	// Apply the input to the character motion
-	if(!CanMoveHorizontal && Value > 0.1){
+	if(!CanMoveHorizontal){
 		AddMovementInput(FVector(0.0f, 0.0f, 1.0f), Value, false);
 	}
 	
