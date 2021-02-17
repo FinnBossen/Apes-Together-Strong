@@ -4,6 +4,8 @@
     <e p="C:\Users\finnb\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
     <e p="C:\Users\finnb\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_ApesStrongTogether.434490247.00" t="ExcludeRecursive" />
     <e p="C:\Users\finnb\Documents\Projekte\Game\Unreal\ApesStrongTogether" t="IncludeFlat">
+      <e p=".gitattributes" t="Include" />
+      <e p=".gitignore" t="Include" />
       <e p="ApesStrongTogether.sln" t="IncludeFlat" />
       <e p="ApesStrongTogether.uproject" t="Include" />
       <e p="Config" t="Include">
@@ -30,6 +32,14 @@
           <e p="ApesStrongTogetherCharacter.h" t="Include" />
           <e p="ApesStrongTogetherGameMode.cpp" t="Include" />
           <e p="ApesStrongTogetherGameMode.h" t="Include" />
+          <e p="Private" t="Include">
+            <e p="SkyscrapperBlock.cpp" t="Include" />
+            <e p="SkyscrapperFloor.cpp" t="Include" />
+          </e>
+          <e p="Public" t="Include">
+            <e p="SkyscrapperBlock.h" t="Include" />
+            <e p="SkyscrapperFloor.h" t="Include" />
+          </e>
         </e>
         <e p="ApesStrongTogether.Target.cs" t="Include" />
         <e p="ApesStrongTogetherEditor.Target.cs" t="Include" />
