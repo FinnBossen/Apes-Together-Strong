@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "SkyscrapperFloor.generated.h"
+#include "SkyScrapperBlock.generated.h"
 
 UCLASS()
-class APESSTRONGTOGETHER_API ASkyscrapperFloor : public AActor
+class APESSTRONGTOGETHER_API ASkyScrapperBlock : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	ASkyscrapperFloor();
+	ASkyScrapperBlock();
 
 protected:
 	// Called when the game starts or when spawned

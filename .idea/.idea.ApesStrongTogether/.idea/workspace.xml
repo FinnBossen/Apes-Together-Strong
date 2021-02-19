@@ -8,7 +8,12 @@
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApesStrongTogether.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/ApesStrongTogether.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MySkyscrapperBlock.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MySkyscrapperFloor.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyscrapperBlock.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyscrapperFloor.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyscrapperBlock.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyscrapperFloor.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,6 +291,9 @@
       <workItem from="1613501594530" duration="204000" />
       <workItem from="1613503024690" duration="175000" />
       <workItem from="1613586601471" duration="841000" />
+      <workItem from="1613667445423" duration="999000" />
+      <workItem from="1613766820373" duration="1000" />
+      <workItem from="1613766867647" duration="370000" />
     </task>
     <servers />
   </component>
