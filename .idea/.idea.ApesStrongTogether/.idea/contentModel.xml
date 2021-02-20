@@ -33,9 +33,11 @@
           <e p="ApesStrongTogetherGameMode.cpp" t="Include" />
           <e p="ApesStrongTogetherGameMode.h" t="Include" />
           <e p="Private" t="Include">
+            <e p="SkyScrapperBlock.cpp" t="Include" />
             <e p="SkyScrapperFloor.cpp" t="Include" />
           </e>
           <e p="Public" t="Include">
+            <e p="SkyScrapperBlock.h" t="Include" />
             <e p="SkyScrapperFloor.h" t="Include" />
           </e>
         </e>

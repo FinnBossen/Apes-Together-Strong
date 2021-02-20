@@ -65,7 +65,8 @@ protected:
 
 public:
 	AApesStrongTogetherCharacter();
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Custom)
+	float Speed = 20.f;
 	/** Returns SideViewCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/

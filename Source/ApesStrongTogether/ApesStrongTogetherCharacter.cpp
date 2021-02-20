@@ -1,6 +1,9 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "ApesStrongTogetherCharacter.h"
+
+#include <mftransform.h>
+
 #include "PaperFlipbookComponent.h"
 #include "Components/TextRenderComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -51,7 +54,7 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 
 	// Configure character movement
 	 GetCharacterMovement()->GravityScale = 0.0f;
-	 GetCharacterMovement()->AirControl = 0.80f;
+	 GetCharacterMovement()->AirControl = 1.f;
 	 GetCharacterMovement()->JumpZVelocity = 1000.f;
 	 GetCharacterMovement()->GroundFriction = 3.0f;
 	 GetCharacterMovement()->MaxWalkSpeed = 600.0f;
@@ -116,6 +119,7 @@ void AApesStrongTogetherCharacter::SetupPlayerInputComponent(class UInputCompone
 
 void AApesStrongTogetherCharacter::MoveHorizontal(float Value)
 {
+
 	// Apply the input to the character motion
 	if(CanMoveHorizontal){
 	AddMovementInput(FVector(1.0f, 0.0f, 0.0f), Value);
@@ -125,13 +129,24 @@ void AApesStrongTogetherCharacter::MoveHorizontal(float Value)
 
 void AApesStrongTogetherCharacter::MoveVertical(float Value)
 {
+	if (Value == 0.f|| CanMoveHorizontal) return;
+	
+	FVector NewLocation = GetActorLocation();
+	if (Value > 0.1f) {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Bka Bla want to fly high high in the sky"	));
+		NewLocation.Z += Speed;
+	} else if (Value < -0.1f) {
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Bka Bla want to fly down down in the sky"	));
+		NewLocation.Z += -Speed;
+	}
+	SetActorLocation(NewLocation);
 
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Bka Bla want to fly high high in the sky"	));
+/*
 	// Apply the input to the character motion
 	if(!CanMoveHorizontal){
 		AddMovementInput(FVector(0.0f, 0.0f, 1.0f), Value, false);
 	}
-	
+	*/
 }
 
 void AApesStrongTogetherCharacter::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
