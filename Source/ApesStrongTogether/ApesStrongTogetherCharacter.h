@@ -60,9 +60,7 @@ protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
-	
 	bool CanMoveHorizontal =  false;
-
 public:
 	AApesStrongTogetherCharacter();
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Custom)

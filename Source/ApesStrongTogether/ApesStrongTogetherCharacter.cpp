@@ -1,12 +1,11 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "ApesStrongTogetherCharacter.h"
-
 #include <mftransform.h>
 
 #include "PaperFlipbookComponent.h"
-#include "Components/TextRenderComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Net/UnrealNetwork.h"
 #include "Components/InputComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -29,7 +28,7 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	GetCapsuleComponent()->SetCapsuleHalfHeight(96.0f);
 	GetCapsuleComponent()->SetCapsuleRadius(40.0f);
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
-	Movement->SetMovementMode(EMovementMode::MOVE_Flying);
+	Movement->SetMovementMode(MOVE_Flying);
 	// Create a camera boom attached to the root (capsule)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
@@ -78,6 +77,8 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	// Enable replication on the Sprite component so animations show up when networked
 	GetSprite()->SetIsReplicated(true);
 	bReplicates = true;
+	ACharacter::SetReplicateMovement(false);     
+
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -99,7 +100,10 @@ void AApesStrongTogetherCharacter::UpdateAnimation()
 void AApesStrongTogetherCharacter::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
-	
+	if (GetLocalRole() != ROLE_AutonomousProxy) // then we are not originating any movement
+		{
+		return;
+		}
 	UpdateCharacter();	
 }
 
@@ -129,6 +133,8 @@ void AApesStrongTogetherCharacter::MoveHorizontal(float Value)
 
 void AApesStrongTogetherCharacter::MoveVertical(float Value)
 {
+
+	
 	if (Value == 0.f|| CanMoveHorizontal) return;
 	
 	FVector NewLocation = GetActorLocation();
@@ -140,7 +146,6 @@ void AApesStrongTogetherCharacter::MoveVertical(float Value)
 		NewLocation.Z += -Speed;
 	}
 	SetActorLocation(NewLocation);
-
 /*
 	// Apply the input to the character motion
 	if(!CanMoveHorizontal){

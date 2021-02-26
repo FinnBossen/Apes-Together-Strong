@@ -6,7 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" afterDir="false" />
@@ -29,20 +28,25 @@
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/UnrealEd/Public/EditorWorldExtension.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/UnrealEd/Public/Utils.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/UnrealEd/Private/Utils.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/Cascade/Private/CascadePreviewViewportClient.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/Cascade/Private/CascadePreviewViewportClient.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementReplication.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Components/SceneComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/Sequencer/Private/Tools/EditToolDragOperations.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/DetailCustomizations/Private/PhysicsSettingsDetails.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherGameMode.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyscrapperBlock.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oXQRzvAkaNCA6QQ7NCyDYvVzie" />
@@ -293,6 +297,10 @@
       <workItem from="1613766820373" duration="1000" />
       <workItem from="1613766867647" duration="831000" />
       <workItem from="1613822097484" duration="2010000" />
+      <workItem from="1613846422446" duration="666000" />
+      <workItem from="1613908335171" duration="171000" />
+      <workItem from="1613941527661" duration="3000000" />
+      <workItem from="1614380948543" duration="2785000" />
     </task>
     <servers />
   </component>
