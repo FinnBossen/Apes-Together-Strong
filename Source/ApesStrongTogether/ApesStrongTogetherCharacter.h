@@ -31,6 +31,8 @@ class AApesStrongTogetherCharacter : public APaperCharacter
 
 	UTextRenderComponent* TextComponent;
 	virtual void Tick(float DeltaSeconds) override;
+
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 protected:
 	// The animation to play while running around
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Animations)
@@ -45,8 +47,9 @@ protected:
 
 	/** Called for side to side input */
 	void MoveHorizontal(float Value);
-	
+
 	/** Called for Vertical input */
+	UFUNCTION(NetMulticast, Reliable)
 	void MoveVertical(float Value);
 
 	void UpdateCharacter();
@@ -60,7 +63,7 @@ protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
-	bool CanMoveHorizontal =  false;
+	bool CanMoveHorizontal = false;
 public:
 	AApesStrongTogetherCharacter();
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Custom)

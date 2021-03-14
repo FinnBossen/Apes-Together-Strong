@@ -2,6 +2,8 @@
 
 #include "ApesStrongTogetherCharacter.h"
 #include <mftransform.h>
+#include <string>
+#include <sstream>
 
 #include "PaperFlipbookComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -77,7 +79,8 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	// Enable replication on the Sprite component so animations show up when networked
 	GetSprite()->SetIsReplicated(true);
 	bReplicates = true;
-	ACharacter::SetReplicateMovement(false);     
+	ACharacter::SetReplicateMovement(false);
+	SetReplicates(true);
 
 }
 
@@ -107,6 +110,11 @@ void AApesStrongTogetherCharacter::Tick(float DeltaSeconds)
 	UpdateCharacter();	
 }
 
+void AApesStrongTogetherCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+}
+
 
 //////////////////////////////////////////////////////////////////////////
 // Input
@@ -131,19 +139,28 @@ void AApesStrongTogetherCharacter::MoveHorizontal(float Value)
 	
 }
 
-void AApesStrongTogetherCharacter::MoveVertical(float Value)
+void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 {
 
 	
 	if (Value == 0.f|| CanMoveHorizontal) return;
 	
 	FVector NewLocation = GetActorLocation();
+
 	if (Value > 0.1f) {
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Bka Bla want to fly high high in the sky"	));
 		NewLocation.Z += Speed;
+		std::ostringstream oss;
+		oss << "Bka Bla want to fly high high in the sky" << NewLocation.Z;
+		std::string CoolText = oss.str();
+		FString HappyString(CoolText.c_str());
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HappyString);
 	} else if (Value < -0.1f) {
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Bka Bla want to fly down down in the sky"	));
 		NewLocation.Z += -Speed;
+		std::ostringstream oss;
+		oss << "Bka Bla want to fly down down in the sky" << NewLocation.Z;
+		std::string CoolText= oss.str();
+		FString HappyString(CoolText.c_str());
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HappyString);
 	}
 	SetActorLocation(NewLocation);
 /*

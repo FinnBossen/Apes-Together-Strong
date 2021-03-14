@@ -6,6 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" afterDir="false" />
@@ -19,27 +23,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Controller.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Character.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Pawn.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/UnrealEd/Public/EditorWorldExtension.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/UnrealEd/Public/Utils.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Components/SceneComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/UnrealEd/Private/Utils.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/Cascade/Private/CascadePreviewViewportClient.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/Cascade/Private/CascadePreviewViewportClient.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementReplication.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Components/SceneComponent.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/Sequencer/Private/Tools/EditToolDragOperations.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/EngineTypes.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://D:/epic-games/UE_4.26/Engine/Source/Editor/DetailCustomizations/Private/PhysicsSettingsDetails.cpp" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -57,11 +42,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34993085" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34997287" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="C++ Project.ApesStrongTogether">
@@ -301,6 +287,10 @@
       <workItem from="1613908335171" duration="171000" />
       <workItem from="1613941527661" duration="3000000" />
       <workItem from="1614380948543" duration="2785000" />
+      <workItem from="1614526243917" duration="66000" />
+      <workItem from="1615127258977" duration="1434000" />
+      <workItem from="1615651075605" duration="1173000" />
+      <workItem from="1615727886552" duration="2123000" />
     </task>
     <servers />
   </component>
