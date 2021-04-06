@@ -7,8 +7,12 @@
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/rampageApe.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/rampageApe.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/rampageApe1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/rampageApe1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/rampageApeBlack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/rampageApeBlack.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_2DSideScrollerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_2DSideScrollerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +292,9 @@
       <workItem from="1615127258977" duration="1434000" />
       <workItem from="1615651075605" duration="1173000" />
       <workItem from="1615727886552" duration="2123000" />
-      <workItem from="1617354168610" duration="2497000" />
+      <workItem from="1617354168610" duration="3096000" />
+      <workItem from="1617735105098" duration="204000" />
+      <workItem from="1617735496956" duration="1211000" />
     </task>
     <servers />
   </component>

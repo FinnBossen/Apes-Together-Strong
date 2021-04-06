@@ -13,6 +13,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "Camera/CameraComponent.h"
+#include "GameFramework/PlayerController.h"
 
 DEFINE_LOG_CATEGORY_STATIC(SideScrollerCharacter, Log, All);
 
@@ -31,6 +32,7 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	GetCapsuleComponent()->SetCapsuleRadius(40.0f);
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
 	Movement->SetMovementMode(MOVE_Flying);
+	
 	// Create a camera boom attached to the root (capsule)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
@@ -81,6 +83,7 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	bReplicates = true;
 	ACharacter::SetReplicateMovement(false);
 	SetReplicates(true);
+
 
 }
 
