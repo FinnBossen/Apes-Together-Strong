@@ -158,18 +158,22 @@ void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 
 	if (Value > 0.1f) {
 		NewLocation.Z += Speed;
+		/*
 		std::ostringstream oss;
 		oss << "Bka Bla want to fly high high in the sky" << NewLocation.Z;
 		std::string CoolText = oss.str();
 		FString HappyString(CoolText.c_str());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HappyString);
+		*/
 	} else if (Value < -0.1f) {
 		NewLocation.Z += -Speed;
+		/*
 		std::ostringstream oss;
 		oss << "Bka Bla want to fly down down in the sky" << NewLocation.Z;
 		std::string CoolText= oss.str();
 		FString HappyString(CoolText.c_str());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HappyString);
+		*/
 	}
 	SetActorLocation(NewLocation);
 /*

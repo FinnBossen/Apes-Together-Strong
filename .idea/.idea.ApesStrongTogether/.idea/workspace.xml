@@ -6,10 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MainCamera_Blueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MainCamera_Blueprint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +30,9 @@
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherGameMode.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyscrapperBlock.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oXQRzvAkaNCA6QQ7NCyDYvVzie" />
@@ -301,7 +300,7 @@
       <workItem from="1617735496956" duration="1211000" />
       <workItem from="1618132935068" duration="189000" />
       <workItem from="1618133300927" duration="136000" />
-      <workItem from="1618133529438" duration="6582000" />
+      <workItem from="1618133529438" duration="7257000" />
     </task>
     <servers />
   </component>
