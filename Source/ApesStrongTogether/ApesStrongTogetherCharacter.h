@@ -52,6 +52,10 @@ protected:
 	UFUNCTION(NetMulticast, Reliable)
 	void MoveVertical(float Value);
 
+	/** Called for Vertical input */
+	UFUNCTION(Server, Reliable)
+    void MoveVerticalServer(float Value);
+
 	void UpdateCharacter();
 
 	/** Handle touch inputs. */

@@ -125,9 +125,15 @@ void AApesStrongTogetherCharacter::GetLifetimeReplicatedProps(TArray<FLifetimePr
 void AApesStrongTogetherCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 
-	PlayerInputComponent->BindAxis("MoveHorizontal", this, &AApesStrongTogetherCharacter::MoveHorizontal);
-	PlayerInputComponent->BindAxis("MoveVertical", this, &AApesStrongTogetherCharacter::MoveVertical);
 
+	PlayerInputComponent->BindAxis("MoveHorizontal", this, &AApesStrongTogetherCharacter::MoveHorizontal);
+
+	if (GetNetMode() == ENetMode::NM_Client)
+	{
+		PlayerInputComponent->BindAxis("MoveVertical", this, &AApesStrongTogetherCharacter::MoveVerticalServer);
+	}
+	PlayerInputComponent->BindAxis("MoveVertical", this, &AApesStrongTogetherCharacter::MoveVertical);
+	
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &AApesStrongTogetherCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &AApesStrongTogetherCharacter::TouchStopped);
 }
@@ -173,6 +179,12 @@ void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 	}
 	*/
 }
+
+void AApesStrongTogetherCharacter::MoveVerticalServer_Implementation(float Value)
+{
+	MoveVertical_Implementation(Value);
+}
+
 
 void AApesStrongTogetherCharacter::TouchStarted(const ETouchIndex::Type FingerIndex, const FVector Location)
 {
