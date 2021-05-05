@@ -7,6 +7,8 @@
 
 #include <string> 
 
+
+#include "SkyScrapperBuilding.h"
 #include "TriggerInterface.h"
 
 AMainCamera::AMainCamera()
@@ -65,7 +67,10 @@ void AMainCamera::TraceForward()
 				ITriggerInterface* Interface = Cast<ITriggerInterface>(Interactable);
 				if(Interface)
 				{
-					Interface->Execute_IsTriggered(Interactable);
+					//Interface->Execute_IsTriggered(Interactable);
+					ASkyScrapperBuilding* Building = Cast<ASkyScrapperBuilding>(Interactable->GetParentActor());
+					Building->TriggerNewFloor_Implementation();
+					
 				}
 				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Focussed: %s"), *Interactable->GetName()));
 				FocusedActor = Interactable;

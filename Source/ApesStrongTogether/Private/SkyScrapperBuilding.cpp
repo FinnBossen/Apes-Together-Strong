@@ -19,8 +19,8 @@ void ASkyScrapperBuilding::BeginPlay()
 	ASkyScrapperFloor* SpawnedActor = static_cast<ASkyScrapperFloor*>(GetWorld()->SpawnActor(SkyScrapperFloor));
 	SpawnedActor->SetActorRelativeLocation(LatestFloorBlueprintPosition);
 	for (int i = 0; i < StartFloors; i++) {
-		CreateNewFloor();
-		MoveTriggerUp();
+		TriggerNewFloor_Implementation();
+		TriggerNewFloor();
 	}
 }
 
@@ -28,12 +28,8 @@ void ASkyScrapperBuilding::CreateNewFloor()
 {
 	LatestFloorBlueprintPosition.Z = LatestFloorBlueprintPosition.Z + FloorOffset;
 	ASkyScrapperFloor* SpawnedActor = static_cast<ASkyScrapperFloor*>(GetWorld()->SpawnActor(SkyScrapperFloor));
+	SpawnedActor->AttachToActor(this, FAttachmentTransformRules::KeepRelativeTransform);
 	SpawnedActor->SetActorRelativeLocation(LatestFloorBlueprintPosition);
-}
-
-void ASkyScrapperBuilding::MoveTriggerUp()
-{
-	
 }
 
 // Called every frame
@@ -46,7 +42,7 @@ void ASkyScrapperBuilding::Tick(float const DeltaTime)
 void ASkyScrapperBuilding::TriggerNewFloor_Implementation()
 {
 	CreateNewFloor();
-	MoveTriggerUp();
+	TriggerNewFloor();
 }
 
 

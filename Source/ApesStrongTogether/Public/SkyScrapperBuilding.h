@@ -30,24 +30,18 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Building")
 	void CreateNewFloor();
 
-	UFUNCTION(BlueprintCallable, Category="Building")
-    void MoveTriggerUp();
-
 	UPROPERTY(EditAnywhere, Category= "Building")
 	int8 StartFloors;
 
 	UPROPERTY(EditAnywhere, Category= "Building")
 	float FloorOffset;
-
-	UPROPERTY(EditAnywhere, Category= "Building")
-	float NewFloorTriggerOffset;
 	
-	UPROPERTY(EditAnywhere, Category= "Building")
+	UPROPERTY(BlueprintReadOnly,VisibleAnywhere ,Category= "Building")
 	FVector LatestFloorBlueprintPosition;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category= "Building")
 	TSubclassOf<ASkyScrapperFloor> SkyScrapperFloor;
-	
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="Trigger")
 	void TriggerNewFloor();
 	virtual void TriggerNewFloor_Implementation();
