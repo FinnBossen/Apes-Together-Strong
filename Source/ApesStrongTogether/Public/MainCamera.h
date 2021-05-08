@@ -21,18 +21,25 @@ class APESSTRONGTOGETHER_API AMainCamera final : public ACameraActor
 	AMainCamera();
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Interaction")
+	float TraceOffset;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Interaction")
 	float TraceDistance;
 	
 	UFUNCTION(BlueprintCallable, Category = "Camera")
-	void CenterBetweenPlayers(const  FVector& Player1, const  FVector& Player2);
+	float CenterBetweenPlayers(const  FVector& Player1, const  FVector& Player2);
 
 	UFUNCTION(BlueprintCallable, Category = "Camera",Server, Reliable)
     void CenterBetweenPlayersServer(const FVector& Player1, const FVector& Player2);
+
+	UFUNCTION(BlueprintCallable, Category="Calculation")
+	int GetPercentageDifferenceBetweenTwoFloats(float A, float B);
 
 	virtual void Tick(float DeltaSeconds) override;
 
 	private:
 
+	static float Distance(const int X1, const int Z1, const int X2, const int Z2);
 	void TraceForward();
 	
 	AActor* FocusedActor;

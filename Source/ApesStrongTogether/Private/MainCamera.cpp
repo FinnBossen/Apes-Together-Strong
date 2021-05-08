@@ -16,12 +16,13 @@ AMainCamera::AMainCamera()
 	PrimaryActorTick.bCanEverTick = true;
 }
 
-void AMainCamera::CenterBetweenPlayers(const FVector& Player1, const FVector& Player2)
+float AMainCamera::CenterBetweenPlayers(const FVector& Player1, const FVector& Player2)
 {
 	FVector Transform = FVector(0.0f, GetActorLocation().Y, 0.0f);
 	Transform.X = (Player1.X + Player2.X) / 2;
 	Transform.Z = (Player1.Z + Player2.Z) / 2;
 	SetActorLocation(Transform);
+	return Distance(Player1.X,Player1.Z,Player2.X,Player2.Z);
 
 }
 
@@ -32,7 +33,7 @@ void AMainCamera::TraceForward()
 	FRotator Rot = CameraView.Rotation;
 	FHitResult Hit;
 
-	FVector Start = GetCameraTopEdge(CameraView);
+	FVector Start = GetCameraTopEdge(CameraView) + FVector(0,0,TraceOffset);
 	FVector End = Start + (Rot.Vector() * TraceDistance);
 	std::string X1 = std::to_string(Start.X);
 	std::string Y1 = std::to_string(Start.Y);
@@ -89,10 +90,22 @@ FVector AMainCamera::GetCameraTopEdge( FMinimalViewInfo const CameraView) const
 	return FVector(CameraView.Location.X,CameraView.Location.Y,CameraView.Location.Z + Height /2.0f);
 }
 
+int AMainCamera::GetPercentageDifferenceBetweenTwoFloats(float A, float B)
+{
+	return ((B - A) * 100) / A;;
+}
+
 void AMainCamera::Tick(float const DeltaSeconds)
 {
 		Super::Tick(DeltaSeconds);
 		TraceForward();
+}
+
+float AMainCamera::Distance(const int X1, const int Z1, const int X2, const int Z2)
+{
+	// Calculating distance
+	return sqrt(pow(X2 - X1, 2) +
+                pow(Z2 - Z1, 2) * 1.0);
 }
 
 void AMainCamera::CenterBetweenPlayersServer_Implementation(const FVector& Player1, const FVector& Player2)

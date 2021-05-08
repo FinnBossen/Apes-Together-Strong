@@ -23,4 +23,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Meshes"))
+	TArray<UStaticMesh*> Meshes;
+
+	
+	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Materials"))
+	TArray<UMaterial*> Materials;
+
 };
