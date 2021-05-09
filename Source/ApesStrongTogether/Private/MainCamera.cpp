@@ -90,6 +90,13 @@ FVector AMainCamera::GetCameraTopEdge( FMinimalViewInfo const CameraView) const
 	return FVector(CameraView.Location.X,CameraView.Location.Y,CameraView.Location.Z + Height /2.0f);
 }
 
+FVector AMainCamera::GetCameraDownEdge(FMinimalViewInfo const CameraView) const
+{
+	const float Width = CameraView.OrthoWidth;
+	const float Height = Width / CameraView.AspectRatio;
+	return FVector(CameraView.Location.X,CameraView.Location.Y,-CameraView.Location.Z + Height /2.0f);
+}
+
 int AMainCamera::GetPercentageDifferenceBetweenTwoFloats(float A, float B)
 {
 	return ((B - A) * 100) / A;;

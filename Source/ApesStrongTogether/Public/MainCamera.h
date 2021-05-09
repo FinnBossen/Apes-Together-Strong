@@ -35,6 +35,12 @@ class APESSTRONGTOGETHER_API AMainCamera final : public ACameraActor
 	UFUNCTION(BlueprintCallable, Category="Calculation")
 	int GetPercentageDifferenceBetweenTwoFloats(float A, float B);
 
+	UFUNCTION(BlueprintCallable, Category = "Camera")
+	FVector GetCameraTopEdge( FMinimalViewInfo const CameraView) const;
+	
+	UFUNCTION(BlueprintCallable, Category = "Camera")
+	FVector GetCameraDownEdge( FMinimalViewInfo const CameraView) const;
+
 	virtual void Tick(float DeltaSeconds) override;
 
 	private:
@@ -43,6 +49,4 @@ class APESSTRONGTOGETHER_API AMainCamera final : public ACameraActor
 	void TraceForward();
 	
 	AActor* FocusedActor;
-
-	FVector GetCameraTopEdge( FMinimalViewInfo const CameraView) const;
 };
