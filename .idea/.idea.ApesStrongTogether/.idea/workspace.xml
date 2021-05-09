@@ -5,24 +5,7 @@
     <projectFile>Intermediate/ProjectFiles/UE4.vcxproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/NewFolder/RampageBuildingBlock2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/NewFolder/RampageBuildingBlock2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/NewFolder/RampageBuildingBlock3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/NewFolder/RampageBuildingBlock3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlock1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlock1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlock2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlock2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlock3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlock3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlock4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlock4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlockDoor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/RampageBuildingBlockDoor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBlock.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBlock.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBuildingBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBuildingBP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperFloor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperFloor.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MainCamera_Blueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MainCamera_Blueprint.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" afterDir="false" />
-    </list>
+    <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="Added a function to get the percentage difference between two points." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -339,8 +322,16 @@
       <workItem from="1620145333868" duration="6228000" />
       <workItem from="1620246351313" duration="4338000" />
       <workItem from="1620318559998" duration="2511000" />
-      <workItem from="1620472475368" duration="3912000" />
+      <workItem from="1620472475368" duration="4220000" />
     </task>
+    <task id="LOCAL-00001" summary="Added a function to get the percentage difference between two points.">
+      <created>1620490763211</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620490763211</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,6 +353,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Added a function to get the percentage difference between two points." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a function to get the percentage difference between two points." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
