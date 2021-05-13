@@ -22,6 +22,9 @@ DEFINE_LOG_CATEGORY_STATIC(SideScrollerCharacter, Log, All);
 
 AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 {
+
+	TriggerCapsule = GetCapsuleComponent();
+	
 	// Use only Yaw from the controller and ignore the rest of the rotation.
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = true;
@@ -78,11 +81,14 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
     // 	TextComponent->SetRelativeRotation(FRotator(0.0f, 90.0f, 0.0f));
     // 	TextComponent->SetupAttachment(RootComponent);
 
+
 	// Enable replication on the Sprite component so animations show up when networked
 	GetSprite()->SetIsReplicated(true);
 	bReplicates = true;
 	ACharacter::SetReplicateMovement(false);
 	SetReplicates(true);
+
+	
 
 
 }
@@ -118,6 +124,9 @@ void AApesStrongTogetherCharacter::GetLifetimeReplicatedProps(TArray<FLifetimePr
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 }
 
+                                   
+                                   
+
 
 //////////////////////////////////////////////////////////////////////////
 // Input
@@ -136,6 +145,10 @@ void AApesStrongTogetherCharacter::SetupPlayerInputComponent(class UInputCompone
 	
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &AApesStrongTogetherCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &AApesStrongTogetherCharacter::TouchStopped);
+
+	if(TriggerCapsule == nullptr) return;
+	TriggerCapsule->OnComponentBeginOverlap.AddDynamic(this, &AApesStrongTogetherCharacter::OnOverlapBegin);
+	TriggerCapsule->OnComponentEndOverlap.AddDynamic(this, &AApesStrongTogetherCharacter::OnOverlapEnd);
 }
 
 void AApesStrongTogetherCharacter::MoveHorizontal(float Value)
@@ -200,6 +213,23 @@ void AApesStrongTogetherCharacter::TouchStopped(const ETouchIndex::Type FingerIn
 {
 	// Cease jumping once touch stopped
 	StopJumping();
+}
+
+void AApesStrongTogetherCharacter::OnOverlapBegin(UPrimitiveComponent* HitComp, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if(!OtherComp->ComponentHasTag( FName( "NoMoveTrigger"))) return;
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
+    
+}
+
+void AApesStrongTogetherCharacter::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+
+	if(!OtherComp->ComponentHasTag( FName( "NoMoveTrigger"))) return;
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Purple, FString::Printf(TEXT("Overlapped End: %s"), *OtherActor->GetName()));
+	
 }
 
 void AApesStrongTogetherCharacter::UpdateCharacter()

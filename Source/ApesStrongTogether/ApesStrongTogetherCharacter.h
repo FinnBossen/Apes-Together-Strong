@@ -55,6 +55,12 @@ protected:
 	/** Called for Vertical input */
 	UFUNCTION(Server, Reliable)
     void MoveVerticalServer(float Value);
+    
+    UFUNCTION()
+    void OnOverlapBegin(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+
+	UFUNCTION()
+	void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 	void UpdateCharacter();
 
@@ -68,12 +74,17 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
 	bool CanMoveHorizontal = false;
+
+	UCapsuleComponent* TriggerCapsule;
 public:
 	AApesStrongTogetherCharacter();
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Custom)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom")
 	float Speed = 20.f;
 	/** Returns SideViewCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+
+	
+
 };

@@ -6,10 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="Added a function to get the percentage difference between two points.">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_NewSkyScrapperFloorTrigger.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_NewSkyScrapperFloorTrigger.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MainCamera_Blueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MainCamera_Blueprint.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +44,6 @@
     <changedPaths>
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherGameMode.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyscrapperBlock.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/NewSkyScrapperFloorTrigger.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/TriggerInterface.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/NewSkyScrapperFloorTrigger.h" />
@@ -53,6 +53,8 @@
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oXQRzvAkaNCA6QQ7NCyDYvVzie" />
@@ -66,7 +68,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35018903" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35035306" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -330,6 +332,11 @@
       <workItem from="1620472475368" duration="4220000" />
       <workItem from="1620563784548" duration="211000" />
       <workItem from="1620566145406" duration="1348000" />
+      <workItem from="1620671924338" duration="1612000" />
+      <workItem from="1620750623801" duration="602000" />
+      <workItem from="1620753402658" duration="649000" />
+      <workItem from="1620761741306" duration="2988000" />
+      <workItem from="1620902831953" duration="2453000" />
     </task>
     <task id="LOCAL-00001" summary="Added a function to get the percentage difference between two points.">
       <created>1620490763211</created>
@@ -380,6 +387,41 @@
           <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBuilding.cpp</url>
           <line>43</line>
           <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
+          <line>221</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
+          <line>230</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
+          <line>229</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp</url>
+          <line>1991</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp</url>
+          <line>1993</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp</url>
+          <line>1992</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
+          <line>220</line>
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
