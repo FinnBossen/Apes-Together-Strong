@@ -7,11 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="Added a function to get the percentage difference between two points.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_NewSkyScrapperFloorTrigger.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_NewSkyScrapperFloorTrigger.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MainCamera_Blueprint.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/MainCamera_Blueprint.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -336,7 +333,9 @@
       <workItem from="1620750623801" duration="602000" />
       <workItem from="1620753402658" duration="649000" />
       <workItem from="1620761741306" duration="2988000" />
-      <workItem from="1620902831953" duration="2453000" />
+      <workItem from="1620902831953" duration="3128000" />
+      <workItem from="1621191230869" duration="462000" />
+      <workItem from="1621271638385" duration="221000" />
     </task>
     <task id="LOCAL-00001" summary="Added a function to get the percentage difference between two points.">
       <created>1620490763211</created>
@@ -389,21 +388,6 @@
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
-          <line>221</line>
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
-          <line>230</line>
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
-          <line>229</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp</url>
           <line>1991</line>
           <option name="timeStamp" value="49" />
@@ -419,9 +403,24 @@
           <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
-          <line>220</line>
-          <option name="timeStamp" value="52" />
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp</url>
+          <line>87</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp</url>
+          <line>88</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp</url>
+          <line>94</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp</url>
+          <line>95</line>
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
