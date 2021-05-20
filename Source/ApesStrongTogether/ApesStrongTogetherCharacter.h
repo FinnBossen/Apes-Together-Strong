@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+#include "MainCamera.h"
 #include "PaperCharacter.h"
 #include "ApesStrongTogetherCharacter.generated.h"
 
@@ -55,6 +57,14 @@ protected:
 	/** Called for Vertical input */
 	UFUNCTION(Server, Reliable)
     void MoveVerticalServer(float Value);
+
+	/** Called for Vertical input */
+	UFUNCTION(NetMulticast, Reliable)
+	void CanWalkDirection(bool Up, bool Down);
+
+	/** Called for Vertical input */
+	UFUNCTION(Server, Reliable)
+	void CanWalkDirectionServer(bool Up, bool Down);
     
     UFUNCTION()
     void OnOverlapBegin(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
@@ -72,9 +82,14 @@ protected:
 
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
+
 	// End of APawn interface
 	bool CanMoveHorizontal = false;
 
+	bool CanWalkUp = true;
+
+	bool CanWalkDown = true;
+	
 	UCapsuleComponent* TriggerCapsule;
 public:
 	AApesStrongTogetherCharacter();
@@ -84,7 +99,5 @@ public:
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-
-	
 
 };

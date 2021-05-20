@@ -85,16 +85,20 @@ void AMainCamera::TraceForward()
 
 FVector AMainCamera::GetCameraTopEdge( FMinimalViewInfo const CameraView) const
 {
+	FVector2D ViewportSize = FVector2D( 0.f, 0.f );
+	GEngine->GameViewport->GetViewportSize(ViewportSize);
 	const float Width = CameraView.OrthoWidth;
-	const float Height = Width / CameraView.AspectRatio;
-	return FVector(CameraView.Location.X,CameraView.Location.Y,CameraView.Location.Z + Height /2.0f);
+	const float FOVConsideration = CameraView.FOV / CameraView.DesiredFOV;
+	const float Height = Width * CameraView.AspectRatio;
+	return FVector(CameraView.Location.X,CameraView.Location.Y,CameraView.Location.Z  + (Height  /2.0f)*FOVConsideration );
 }
 
 FVector AMainCamera::GetCameraDownEdge(FMinimalViewInfo const CameraView) const
 {
 	const float Width = CameraView.OrthoWidth;
-	const float Height = Width / CameraView.AspectRatio;
-	return FVector(CameraView.Location.X,CameraView.Location.Y,-CameraView.Location.Z + Height /2.0f);
+	const float FOVConsideration = CameraView.FOV / CameraView.DesiredFOV;
+	const float Height = Width * CameraView.AspectRatio;
+	return FVector(CameraView.Location.X,CameraView.Location.Y,-CameraView.Location.Z + (Height  /2.0f)*FOVConsideration);
 }
 
 int AMainCamera::GetPercentageDifferenceBetweenTwoFloats(float A, float B)

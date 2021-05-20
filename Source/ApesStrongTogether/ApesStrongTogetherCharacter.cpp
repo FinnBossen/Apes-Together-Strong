@@ -2,7 +2,6 @@
 
 #include "ApesStrongTogetherCharacter.h"
 #include <mftransform.h>
-#include <string>
 #include <sstream>
 
 #include "PaperFlipbookComponent.h"
@@ -13,7 +12,6 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "Camera/CameraComponent.h"
-#include "GameFramework/PlayerController.h"
 
 DEFINE_LOG_CATEGORY_STATIC(SideScrollerCharacter, Log, All);
 
@@ -93,6 +91,13 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 
 }
 
+void AApesStrongTogetherCharacter::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	//Do replications on properties
+}
+
 //////////////////////////////////////////////////////////////////////////
 // Animation
 
@@ -119,15 +124,6 @@ void AApesStrongTogetherCharacter::Tick(float DeltaSeconds)
 	UpdateCharacter();	
 }
 
-void AApesStrongTogetherCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
-{
-	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
-}
-
-                                   
-                                   
-
-
 //////////////////////////////////////////////////////////////////////////
 // Input
 
@@ -151,6 +147,7 @@ void AApesStrongTogetherCharacter::SetupPlayerInputComponent(class UInputCompone
 	TriggerCapsule->OnComponentEndOverlap.AddDynamic(this, &AApesStrongTogetherCharacter::OnOverlapEnd);
 }
 
+
 void AApesStrongTogetherCharacter::MoveHorizontal(float Value)
 {
 
@@ -170,7 +167,11 @@ void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 	FVector NewLocation = GetActorLocation();
 
 	if (Value > 0.1f) {
-		NewLocation.Z += Speed;
+		if(CanWalkUp)
+		{
+			NewLocation.Z += Speed;
+		}
+		
 		/*
 		std::ostringstream oss;
 		oss << "Bka Bla want to fly high high in the sky" << NewLocation.Z;
@@ -179,7 +180,11 @@ void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HappyString);
 		*/
 	} else if (Value < -0.1f) {
-		NewLocation.Z += -Speed;
+		if(CanWalkDown)
+		{
+			NewLocation.Z += -Speed;
+		}
+	
 		/*
 		std::ostringstream oss;
 		oss << "Bka Bla want to fly down down in the sky" << NewLocation.Z;
@@ -215,11 +220,39 @@ void AApesStrongTogetherCharacter::TouchStopped(const ETouchIndex::Type FingerIn
 	StopJumping();
 }
 
-void AApesStrongTogetherCharacter::OnOverlapBegin(UPrimitiveComponent* HitComp, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+void AApesStrongTogetherCharacter::CanWalkDirection_Implementation(const bool Up, const bool Down)
 {
-	if(!OtherComp->ComponentHasTag( FName( "NoMoveTrigger"))) return;
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
+	CanWalkUp = Up;
+	CanWalkDown = Down;
+}
+
+void AApesStrongTogetherCharacter::CanWalkDirectionServer_Implementation(const bool Up, const bool Down)
+{
+	CanWalkDirection_Implementation(Up,Down);
+}
+
+void AApesStrongTogetherCharacter::OnOverlapBegin(UPrimitiveComponent* HitComp, AActor* OtherActor,
+                                                  UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if(OtherComp->ComponentHasTag( FName( "NoMoveTriggerUp")))
+	{
+		if (GetNetMode() == ENetMode::NM_Client)
+		{
+			CanWalkDirectionServer(false,true);
+		}
+		CanWalkDirection(false,true);
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
+	}
+	if(OtherComp->ComponentHasTag( FName( "NoMoveTriggerDown")))
+	{
+		if (GetNetMode() == ENetMode::NM_Client)
+		{
+			CanWalkDirectionServer(true,false);
+		}
+		CanWalkDirection(true,false);
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
+	}
+
     
 }
 
@@ -227,9 +260,14 @@ void AApesStrongTogetherCharacter::OnOverlapEnd(UPrimitiveComponent* OverlappedC
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 
-	if(!OtherComp->ComponentHasTag( FName( "NoMoveTrigger"))) return;
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Purple, FString::Printf(TEXT("Overlapped End: %s"), *OtherActor->GetName()));
-	
+	if(!OtherComp->ComponentHasTag( FName( "NoMoveTriggerUp")) && !OtherComp->ComponentHasTag( FName( "NoMoveTriggerDown"))) return;
+
+	if (GetNetMode() == ENetMode::NM_Client)
+	{
+		CanWalkDirectionServer(true,true);
+	}
+	CanWalkDirection(true,true);
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
 }
 
 void AApesStrongTogetherCharacter::UpdateCharacter()
@@ -254,4 +292,5 @@ void AApesStrongTogetherCharacter::UpdateCharacter()
 		}
 		
 	}
+
 }
