@@ -98,7 +98,7 @@ FVector AMainCamera::GetCameraDownEdge(FMinimalViewInfo const CameraView) const
 	const float Width = CameraView.OrthoWidth;
 	const float FOVConsideration = CameraView.FOV / CameraView.DesiredFOV;
 	const float Height = Width * CameraView.AspectRatio;
-	return FVector(CameraView.Location.X,CameraView.Location.Y,-CameraView.Location.Z + (Height  /2.0f)*FOVConsideration);
+	return FVector(CameraView.Location.X,CameraView.Location.Y,(-CameraView.Location.Z + (Height /2.0f)*FOVConsideration)*-1);
 }
 
 int AMainCamera::GetPercentageDifferenceBetweenTwoFloats(float A, float B)
