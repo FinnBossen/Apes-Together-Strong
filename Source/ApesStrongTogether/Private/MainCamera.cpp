@@ -70,7 +70,7 @@ void AMainCamera::TraceForward()
 				{
 					//Interface->Execute_IsTriggered(Interactable);
 					ASkyScrapperBuilding* Building = Cast<ASkyScrapperBuilding>(Interactable->GetParentActor());
-					Building->TriggerNewFloor_Implementation();
+					Building->TriggerNewFloor();
 					
 				}
 				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Focussed: %s"), *Interactable->GetName()));
@@ -85,8 +85,6 @@ void AMainCamera::TraceForward()
 
 FVector AMainCamera::GetCameraTopEdge( FMinimalViewInfo const CameraView) const
 {
-	FVector2D ViewportSize = FVector2D( 0.f, 0.f );
-	GEngine->GameViewport->GetViewportSize(ViewportSize);
 	const float Width = CameraView.OrthoWidth;
 	const float FOVConsideration = CameraView.FOV / CameraView.DesiredFOV;
 	const float Height = Width * CameraView.AspectRatio;

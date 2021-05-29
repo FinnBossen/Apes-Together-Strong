@@ -3,11 +3,16 @@
 
 #include "SkyScrapperBlock.h"
 
+#include "Net/UnrealNetwork.h"
+
 // Sets default values
 ASkyScrapperBlock::ASkyScrapperBlock()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	
+
 
 }
 
@@ -15,8 +20,9 @@ ASkyScrapperBlock::ASkyScrapperBlock()
 void ASkyScrapperBlock::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
+
+
 
 // Called every frame
 void ASkyScrapperBlock::Tick(float DeltaTime)
@@ -24,4 +30,6 @@ void ASkyScrapperBlock::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+
 

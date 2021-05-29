@@ -26,9 +26,14 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 	
 	UFUNCTION(BlueprintCallable, Category="Building")
 	void CreateNewFloor();
+
+	UFUNCTION(BlueprintCallable, Category="Trigger")
+	void CreateInitialFloors();
 
 	UPROPERTY(EditAnywhere, Category= "Building")
 	int8 StartFloors;
@@ -36,14 +41,17 @@ public:
 	UPROPERTY(EditAnywhere, Category= "Building")
 	float FloorOffset;
 	
-	UPROPERTY(BlueprintReadOnly,VisibleAnywhere ,Category= "Building")
+	UPROPERTY(BlueprintReadOnly,VisibleAnywhere ,Category= "Building", Replicated)
 	FVector LatestFloorBlueprintPosition;
 	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category= "Building")
 	TSubclassOf<ASkyScrapperFloor> SkyScrapperFloor;
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="Trigger")
+	UFUNCTION(BlueprintCallable, Category="Trigger")
 	void TriggerNewFloor();
-	virtual void TriggerNewFloor_Implementation();
+
+
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable, Category="Trigger")
+	void ChangeTriggerPosition();
 
 };

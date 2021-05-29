@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+#include "Chaos/AABB.h"
 #include "GameFramework/Actor.h"
 #include "SkyScrapperBlock.generated.h"
 
@@ -29,5 +31,5 @@ public:
 	
 	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Materials"))
 	TArray<UMaterial*> Materials;
-
+	
 };
