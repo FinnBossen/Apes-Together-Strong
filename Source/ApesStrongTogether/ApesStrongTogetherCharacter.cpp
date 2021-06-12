@@ -91,6 +91,14 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 
 }
 
+void AApesStrongTogetherCharacter::TriggerOneTimeAnim_Implementation(EOneTimeAnimation EOneTimeAnimationEnum)
+{
+}
+
+void AApesStrongTogetherCharacter::ChangeCurrentAnimCycle_Implementation(EAnimationCycles EAnimationCyclesEnum)
+{
+}
+
 void AApesStrongTogetherCharacter::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
@@ -162,8 +170,12 @@ void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 {
 
 	
-	if (Value == 0.f|| CanMoveHorizontal) return;
-	
+	if (Value == 0.f|| CanMoveHorizontal)
+	{
+		ChangeCurrentAnimCycle(EAnimationCycles::Idle);
+		return;
+	}
+	ChangeCurrentAnimCycle(EAnimationCycles::Climbing);
 	FVector NewLocation = GetActorLocation();
 
 	if (Value > 0.1f) {
@@ -193,6 +205,7 @@ void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HappyString);
 		*/
 	}
+	
 	SetActorLocation(NewLocation);
 /*
 	// Apply the input to the character motion

@@ -7,6 +7,9 @@
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="Added a function to get the percentage difference between two points.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_2DSideScrollerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_2DSideScrollerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +29,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Windows Kits/10/Include/10.0.18362.0/um/winnt.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/Templates/Casts.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Camera/CameraActor.h" root0="FORCE_HIGHLIGHTING" />
@@ -43,13 +45,13 @@
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/TriggerInterface.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/NewSkyScrapperFloorTrigger.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBuilding.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBuilding.cpp" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oXQRzvAkaNCA6QQ7NCyDYvVzie" />
@@ -345,6 +347,9 @@
       <workItem from="1622286440300" duration="1352000" />
       <workItem from="1622288275168" duration="1634000" />
       <workItem from="1622563619717" duration="777000" />
+      <workItem from="1623497931606" duration="812000" />
+      <workItem from="1623499357951" duration="1858000" />
+      <workItem from="1623502258472" duration="811000" />
     </task>
     <task id="LOCAL-00001" summary="Added a function to get the percentage difference between two points.">
       <created>1620490763211</created>

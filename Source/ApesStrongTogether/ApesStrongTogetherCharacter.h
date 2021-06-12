@@ -18,6 +18,22 @@ class UTextRenderComponent;
  * The CharacterMovementComponent (inherited from ACharacter) handles movement of the collision capsule
  * The Sprite component (inherited from APaperCharacter) handles the visuals
  */
+
+UENUM(BlueprintType)
+enum class EAnimationCycles : uint8
+{
+	Idle UMETA(DisplayName = "Idle"),
+	Climbing UMETA(DisplayName = "Climbing"),
+};
+
+UENUM(BlueprintType)
+enum class EOneTimeAnimation : uint8
+{
+	Beating UMETA(DisplayName = "Beating"),
+	Kicking UMETA(DisplayName = "Kicking"),
+	Jumping UMETA(DisplayName = "Jumping"),
+};
+
 UCLASS(config=Game)
 class AApesStrongTogetherCharacter : public APaperCharacter
 {
@@ -35,6 +51,7 @@ class AApesStrongTogetherCharacter : public APaperCharacter
 	virtual void Tick(float DeltaSeconds) override;
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
 protected:
 	// The animation to play while running around
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Animations)
@@ -56,7 +73,7 @@ protected:
 
 	/** Called for Vertical input */
 	UFUNCTION(Server, Reliable)
-    void MoveVerticalServer(float Value);
+	void MoveVerticalServer(float Value);
 
 	/** Called for Vertical input */
 	UFUNCTION(NetMulticast, Reliable)
@@ -65,12 +82,15 @@ protected:
 	/** Called for Vertical input */
 	UFUNCTION(Server, Reliable)
 	void CanWalkDirectionServer(bool Up, bool Down);
-    
-    UFUNCTION()
-    void OnOverlapBegin(class UPrimitiveComponent* HitComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
 
 	UFUNCTION()
-	void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	void OnOverlapBegin(class UPrimitiveComponent* HitComp, class AActor* OtherActor,
+	                    class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
+	                    const FHitResult& SweepResult);
+
+	UFUNCTION()
+	void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor,
+	                  class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
 
 	void UpdateCharacter();
 
@@ -89,10 +109,11 @@ protected:
 	bool CanWalkUp = true;
 
 	bool CanWalkDown = true;
-	
+
 	UCapsuleComponent* TriggerCapsule;
 public:
 	AApesStrongTogetherCharacter();
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom")
 	float Speed = 20.f;
 	/** Returns SideViewCameraComponent subobject **/
@@ -100,4 +121,9 @@ public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
+	void ChangeCurrentAnimCycle(EAnimationCycles EAnimationCyclesEnum);
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
+	void TriggerOneTimeAnim(EOneTimeAnimation EOneTimeAnimationEnum);
 };
