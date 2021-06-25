@@ -21,12 +21,28 @@ DEFINE_LOG_CATEGORY_STATIC(SideScrollerCharacter, Log, All);
 AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 {
 
+
+
 	TriggerCapsule = GetCapsuleComponent();
+
+	ApeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CharacterMesh"));
+
+	ApeMesh ->AttachToComponent(TriggerCapsule,FAttachmentTransformRules::SnapToTargetIncludingScale);
+
+	ApeMesh->SetRelativeLocation(FVector(-10,0,-90));
+	ApeMesh->SetRelativeScale3D(FVector(5.75,5.75,5.75));
+	ApeMesh->SetIsReplicated(true);
+	
+
+	AnimationSpeed = VoxelAnimationSpeed;
 	
 	// Use only Yaw from the controller and ignore the rest of the rotation.
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = true;
 	bUseControllerRotationRoll = false;
+
+
+	CurrentAnimationCycle = EAnimationCycles::Idle;
 
 	// Set the size of our collision capsule.
 	GetCapsuleComponent()->SetCapsuleHalfHeight(96.0f);
@@ -91,12 +107,45 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 
 }
 
+void AApesStrongTogetherCharacter::VoxelAnimation()
+{
+
+	switch (CurrentAnimationCycle)
+	{
+	case EAnimationCycles::Idle:
+		if(CurrentVoxelFrame < Idle.Num() -1  )
+		{
+			CurrentVoxelFrame++;
+		}else
+		{
+			CurrentVoxelFrame = 0;
+		}
+		ApeMesh->SetStaticMesh(Idle[CurrentVoxelFrame]);
+		break;
+	case EAnimationCycles::Climbing:
+		if(CurrentVoxelFrame < WalkCycle.Num() -1)
+		{
+			CurrentVoxelFrame++;
+		}else
+		{
+			CurrentVoxelFrame = 0;
+		}
+		ApeMesh->SetStaticMesh(WalkCycle[CurrentVoxelFrame]);
+		break;
+	default:
+		break;
+	}
+}
+
 void AApesStrongTogetherCharacter::TriggerOneTimeAnim_Implementation(EOneTimeAnimation EOneTimeAnimationEnum)
 {
+	
 }
 
 void AApesStrongTogetherCharacter::ChangeCurrentAnimCycle_Implementation(EAnimationCycles EAnimationCyclesEnum)
 {
+	CurrentAnimationCycle = EAnimationCyclesEnum;
+	CurrentVoxelFrame = 0;
 }
 
 void AApesStrongTogetherCharacter::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
@@ -129,7 +178,14 @@ void AApesStrongTogetherCharacter::Tick(float DeltaSeconds)
 		{
 		return;
 		}
-	UpdateCharacter();	
+	UpdateCharacter();
+	AnimationSpeed -= DeltaSeconds;
+	if (AnimationSpeed < 0)
+	{
+		VoxelAnimation();
+		AnimationSpeed = VoxelAnimationSpeed;
+	}
+	
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -172,10 +228,10 @@ void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 	
 	if (Value == 0.f|| CanMoveHorizontal)
 	{
-		ChangeCurrentAnimCycle(EAnimationCycles::Idle);
+		ChangeCurrentAnimCycle_Implementation(EAnimationCycles::Idle);
 		return;
 	}
-	ChangeCurrentAnimCycle(EAnimationCycles::Climbing);
+	ChangeCurrentAnimCycle_Implementation(EAnimationCycles::Climbing);
 	FVector NewLocation = GetActorLocation();
 
 	if (Value > 0.1f) {

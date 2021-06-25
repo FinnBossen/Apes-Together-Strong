@@ -52,6 +52,7 @@ class AApesStrongTogetherCharacter : public APaperCharacter
 
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
+
 protected:
 	// The animation to play while running around
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Animations)
@@ -78,6 +79,9 @@ protected:
 	/** Called for Vertical input */
 	UFUNCTION(NetMulticast, Reliable)
 	void CanWalkDirection(bool Up, bool Down);
+
+	UPROPERTY()
+	EAnimationCycles CurrentAnimationCycle;
 
 	/** Called for Vertical input */
 	UFUNCTION(Server, Reliable)
@@ -110,7 +114,14 @@ protected:
 
 	bool CanWalkDown = true;
 
+	float AnimationSpeed;
+
+	int CurrentVoxelFrame = 0;
+
 	UCapsuleComponent* TriggerCapsule;
+	
+	UPROPERTY(Instanced, VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
+    UStaticMeshComponent* ApeMesh;
 public:
 	AApesStrongTogetherCharacter();
 
@@ -120,9 +131,21 @@ public:
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="WalkCycle"),Category="VoxelAnimation")
+	TArray<UStaticMesh*> WalkCycle;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Idle"),Category="VoxelAnimation")
+	TArray<UStaticMesh*> Idle;
+
+	UPROPERTY( EditAnywhere)
+	float  VoxelAnimationSpeed;
+	
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
 	void ChangeCurrentAnimCycle(EAnimationCycles EAnimationCyclesEnum);
+
+	UFUNCTION(BlueprintCallable, Category="VoxelAnimation")
+	void VoxelAnimation();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
 	void TriggerOneTimeAnim(EOneTimeAnimation EOneTimeAnimationEnum);
