@@ -50,6 +50,8 @@ class AApesStrongTogetherCharacter : public APaperCharacter
 	UTextRenderComponent* TextComponent;
 	virtual void Tick(float DeltaSeconds) override;
 
+	virtual void BeginPlay() override;
+
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 
@@ -79,6 +81,12 @@ protected:
 	/** Called for Vertical input */
 	UFUNCTION(NetMulticast, Reliable)
 	void CanWalkDirection(bool Up, bool Down);
+
+	/* Handle to manage the voxel Animation timer */
+	FTimerHandle VoxelAnimationTimerHandle;
+
+	UFUNCTION()
+	void VoxelAnimation();
 
 	UPROPERTY()
 	EAnimationCycles CurrentAnimationCycle;
@@ -114,8 +122,6 @@ protected:
 
 	bool CanWalkDown = true;
 
-	float AnimationSpeed;
-
 	int CurrentVoxelFrame = 0;
 
 	UCapsuleComponent* TriggerCapsule;
@@ -140,12 +146,13 @@ public:
 
 	UPROPERTY( EditAnywhere)
 	float  VoxelAnimationSpeed;
+
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
+	void SetVoxelMaterial(UStaticMesh* UStaticMesh, FName MaterialSlotName);
 	
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
 	void ChangeCurrentAnimCycle(EAnimationCycles EAnimationCyclesEnum);
-
-	UFUNCTION(BlueprintCallable, Category="VoxelAnimation")
-	void VoxelAnimation();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
 	void TriggerOneTimeAnim(EOneTimeAnimation EOneTimeAnimationEnum);

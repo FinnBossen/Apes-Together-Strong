@@ -20,36 +20,33 @@ DEFINE_LOG_CATEGORY_STATIC(SideScrollerCharacter, Log, All);
 
 AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 {
-
-
-
 	TriggerCapsule = GetCapsuleComponent();
 
 	ApeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CharacterMesh"));
 
-	ApeMesh ->AttachToComponent(TriggerCapsule,FAttachmentTransformRules::SnapToTargetIncludingScale);
+	ApeMesh->AttachToComponent(TriggerCapsule, FAttachmentTransformRules::SnapToTargetIncludingScale);
 
-	ApeMesh->SetRelativeLocation(FVector(-10,0,-90));
-	ApeMesh->SetRelativeScale3D(FVector(5.75,5.75,5.75));
+	ApeMesh->SetRelativeLocation(FVector(-10, 0, -90));
+	ApeMesh->SetRelativeScale3D(FVector(5.75, 5.75, 5.75));
 	ApeMesh->SetIsReplicated(true);
-	
 
-	AnimationSpeed = VoxelAnimationSpeed;
-	
+
+
+
 	// Use only Yaw from the controller and ignore the rest of the rotation.
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = true;
 	bUseControllerRotationRoll = false;
 
 
-	CurrentAnimationCycle = EAnimationCycles::Idle;
+
 
 	// Set the size of our collision capsule.
 	GetCapsuleComponent()->SetCapsuleHalfHeight(96.0f);
 	GetCapsuleComponent()->SetCapsuleRadius(40.0f);
 	UCharacterMovementComponent* Movement = GetCharacterMovement();
 	Movement->SetMovementMode(MOVE_Flying);
-	
+
 	// Create a camera boom attached to the root (capsule)
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
@@ -58,7 +55,7 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	CameraBoom->SetUsingAbsoluteRotation(true);
 	CameraBoom->bDoCollisionTest = false;
 	CameraBoom->SetRelativeRotation(FRotator(0.0f, -90.0f, 0.0f));
-	
+
 
 	// Create an orthographic camera (no perspective) and attach it to the boom
 	SideViewCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("SideViewCamera"));
@@ -73,11 +70,11 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	GetCharacterMovement()->bOrientRotationToMovement = false;
 
 	// Configure character movement
-	 GetCharacterMovement()->GravityScale = 0.0f;
-	 GetCharacterMovement()->AirControl = 1.f;
-	 GetCharacterMovement()->JumpZVelocity = 1000.f;
-	 GetCharacterMovement()->GroundFriction = 3.0f;
-	 GetCharacterMovement()->MaxWalkSpeed = 600.0f;
+	GetCharacterMovement()->GravityScale = 0.0f;
+	GetCharacterMovement()->AirControl = 1.f;
+	GetCharacterMovement()->JumpZVelocity = 1000.f;
+	GetCharacterMovement()->GroundFriction = 3.0f;
+	GetCharacterMovement()->MaxWalkSpeed = 600.0f;
 	GetCharacterMovement()->MaxFlySpeed = 600.0f;
 
 	// Lock character motion onto the XZ plane, so the character can't move in or out of the screen
@@ -89,11 +86,11 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	// behavior on the edge of a ledge versus inclines by setting this to true or false
 	GetCharacterMovement()->bUseFlatBaseForFloorChecks = true;
 
-    // 	TextComponent = CreateDefaultSubobject<UTextRenderComponent>(TEXT("IncarGear"));
-    // 	TextComponent->SetRelativeScale3D(FVector(3.0f, 3.0f, 3.0f));
-    // 	TextComponent->SetRelativeLocation(FVector(35.0f, 5.0f, 20.0f));
-    // 	TextComponent->SetRelativeRotation(FRotator(0.0f, 90.0f, 0.0f));
-    // 	TextComponent->SetupAttachment(RootComponent);
+	// 	TextComponent = CreateDefaultSubobject<UTextRenderComponent>(TEXT("IncarGear"));
+	// 	TextComponent->SetRelativeScale3D(FVector(3.0f, 3.0f, 3.0f));
+	// 	TextComponent->SetRelativeLocation(FVector(35.0f, 5.0f, 20.0f));
+	// 	TextComponent->SetRelativeRotation(FRotator(0.0f, 90.0f, 0.0f));
+	// 	TextComponent->SetupAttachment(RootComponent);
 
 
 	// Enable replication on the Sprite component so animations show up when networked
@@ -101,32 +98,46 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	bReplicates = true;
 	ACharacter::SetReplicateMovement(false);
 	SetReplicates(true);
-
-	
-
-
 }
+
+void AApesStrongTogetherCharacter::SetVoxelMaterial_Implementation(UStaticMesh* UStaticMesh, FName MaterialSlotName)
+{
+	const int32 Index = UStaticMesh->GetMaterialIndexFromImportedMaterialSlotName(MaterialSlotName);
+	UMaterialInterface* MaterialInterface = UStaticMesh->GetMaterial(Index);
+	UStaticMesh->SetMaterial(Index,MaterialInterface);
+}
+
+void AApesStrongTogetherCharacter::BeginPlay()
+{
+	GetWorld()->GetTimerManager().SetTimer(VoxelAnimationTimerHandle, this,
+	                                       &AApesStrongTogetherCharacter::VoxelAnimation, VoxelAnimationSpeed, true);
+}
+
 
 void AApesStrongTogetherCharacter::VoxelAnimation()
 {
-
 	switch (CurrentAnimationCycle)
 	{
 	case EAnimationCycles::Idle:
-		if(CurrentVoxelFrame < Idle.Num() -1  )
+		if (CurrentVoxelFrame < Idle.Num() - 1)
 		{
 			CurrentVoxelFrame++;
-		}else
+		}
+		else
 		{
 			CurrentVoxelFrame = 0;
+			
 		}
 		ApeMesh->SetStaticMesh(Idle[CurrentVoxelFrame]);
 		break;
 	case EAnimationCycles::Climbing:
-		if(CurrentVoxelFrame < WalkCycle.Num() -1)
+		if (CurrentVoxelFrame < WalkCycle.Num() - 1)
 		{
 			CurrentVoxelFrame++;
-		}else
+	
+			
+		}
+		else
 		{
 			CurrentVoxelFrame = 0;
 		}
@@ -137,9 +148,9 @@ void AApesStrongTogetherCharacter::VoxelAnimation()
 	}
 }
 
+
 void AApesStrongTogetherCharacter::TriggerOneTimeAnim_Implementation(EOneTimeAnimation EOneTimeAnimationEnum)
 {
-	
 }
 
 void AApesStrongTogetherCharacter::ChangeCurrentAnimCycle_Implementation(EAnimationCycles EAnimationCyclesEnum)
@@ -148,7 +159,7 @@ void AApesStrongTogetherCharacter::ChangeCurrentAnimCycle_Implementation(EAnimat
 	CurrentVoxelFrame = 0;
 }
 
-void AApesStrongTogetherCharacter::GetLifetimeReplicatedProps(TArray< FLifetimeProperty > & OutLifetimeProps) const
+void AApesStrongTogetherCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
 
@@ -165,27 +176,20 @@ void AApesStrongTogetherCharacter::UpdateAnimation()
 
 	// Are we moving or standing still?
 	UPaperFlipbook* DesiredAnimation = (PlayerSpeedSqr > 0.0f) ? RunningAnimation : IdleAnimation;
-	if( GetSprite()->GetFlipbook() != DesiredAnimation 	)
+	if (GetSprite()->GetFlipbook() != DesiredAnimation)
 	{
 		GetSprite()->SetFlipbook(DesiredAnimation);
 	}
 }
 
-void AApesStrongTogetherCharacter::Tick(float DeltaSeconds)
+void AApesStrongTogetherCharacter::Tick(const float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 	if (GetLocalRole() != ROLE_AutonomousProxy) // then we are not originating any movement
-		{
-		return;
-		}
-	UpdateCharacter();
-	AnimationSpeed -= DeltaSeconds;
-	if (AnimationSpeed < 0)
 	{
-		VoxelAnimation();
-		AnimationSpeed = VoxelAnimationSpeed;
+		return;
 	}
-	
+	UpdateCharacter();
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -193,8 +197,6 @@ void AApesStrongTogetherCharacter::Tick(float DeltaSeconds)
 
 void AApesStrongTogetherCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
-
-
 	PlayerInputComponent->BindAxis("MoveHorizontal", this, &AApesStrongTogetherCharacter::MoveHorizontal);
 
 	if (GetNetMode() == ENetMode::NM_Client)
@@ -202,11 +204,11 @@ void AApesStrongTogetherCharacter::SetupPlayerInputComponent(class UInputCompone
 		PlayerInputComponent->BindAxis("MoveVertical", this, &AApesStrongTogetherCharacter::MoveVerticalServer);
 	}
 	PlayerInputComponent->BindAxis("MoveVertical", this, &AApesStrongTogetherCharacter::MoveVertical);
-	
+
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &AApesStrongTogetherCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &AApesStrongTogetherCharacter::TouchStopped);
 
-	if(TriggerCapsule == nullptr) return;
+	if (TriggerCapsule == nullptr) return;
 	TriggerCapsule->OnComponentBeginOverlap.AddDynamic(this, &AApesStrongTogetherCharacter::OnOverlapBegin);
 	TriggerCapsule->OnComponentEndOverlap.AddDynamic(this, &AApesStrongTogetherCharacter::OnOverlapEnd);
 }
@@ -214,32 +216,31 @@ void AApesStrongTogetherCharacter::SetupPlayerInputComponent(class UInputCompone
 
 void AApesStrongTogetherCharacter::MoveHorizontal(float Value)
 {
-
 	// Apply the input to the character motion
-	if(CanMoveHorizontal){
-	AddMovementInput(FVector(1.0f, 0.0f, 0.0f), Value);
+	if (CanMoveHorizontal)
+	{
+		AddMovementInput(FVector(1.0f, 0.0f, 0.0f), Value);
 	}
-	
 }
 
 void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 {
-
-	
-	if (Value == 0.f|| CanMoveHorizontal)
+	if (Value == 0.f || CanMoveHorizontal)
 	{
-		ChangeCurrentAnimCycle_Implementation(EAnimationCycles::Idle);
+		CurrentAnimationCycle = EAnimationCycles::Idle;
 		return;
 	}
-	ChangeCurrentAnimCycle_Implementation(EAnimationCycles::Climbing);
+
+	CurrentAnimationCycle = EAnimationCycles::Climbing;
 	FVector NewLocation = GetActorLocation();
 
-	if (Value > 0.1f) {
-		if(CanWalkUp)
+	if (Value > 0.1f)
+	{
+		if (CanWalkUp)
 		{
 			NewLocation.Z += Speed;
 		}
-		
+
 		/*
 		std::ostringstream oss;
 		oss << "Bka Bla want to fly high high in the sky" << NewLocation.Z;
@@ -247,12 +248,14 @@ void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 		FString HappyString(CoolText.c_str());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HappyString);
 		*/
-	} else if (Value < -0.1f) {
-		if(CanWalkDown)
+	}
+	else if (Value < -0.1f)
+	{
+		if (CanWalkDown)
 		{
 			NewLocation.Z += -Speed;
 		}
-	
+
 		/*
 		std::ostringstream oss;
 		oss << "Bka Bla want to fly down down in the sky" << NewLocation.Z;
@@ -261,14 +264,14 @@ void AApesStrongTogetherCharacter::MoveVertical_Implementation(float Value)
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, HappyString);
 		*/
 	}
-	
+
 	SetActorLocation(NewLocation);
-/*
-	// Apply the input to the character motion
-	if(!CanMoveHorizontal){
-		AddMovementInput(FVector(0.0f, 0.0f, 1.0f), Value, false);
-	}
-	*/
+	/*
+		// Apply the input to the character motion
+		if(!CanMoveHorizontal){
+			AddMovementInput(FVector(0.0f, 0.0f, 1.0f), Value, false);
+		}
+		*/
 }
 
 void AApesStrongTogetherCharacter::MoveVerticalServer_Implementation(float Value)
@@ -297,46 +300,49 @@ void AApesStrongTogetherCharacter::CanWalkDirection_Implementation(const bool Up
 
 void AApesStrongTogetherCharacter::CanWalkDirectionServer_Implementation(const bool Up, const bool Down)
 {
-	CanWalkDirection_Implementation(Up,Down);
+	CanWalkDirection_Implementation(Up, Down);
 }
 
 void AApesStrongTogetherCharacter::OnOverlapBegin(UPrimitiveComponent* HitComp, AActor* OtherActor,
-                                                  UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+                                                  UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep,
+                                                  const FHitResult& SweepResult)
 {
-	if(OtherComp->ComponentHasTag( FName( "NoMoveTriggerUp")))
+	if (OtherComp->ComponentHasTag(FName("NoMoveTriggerUp")))
 	{
 		if (GetNetMode() == ENetMode::NM_Client)
 		{
-			CanWalkDirectionServer(false,true);
+			CanWalkDirectionServer(false, true);
 		}
-		CanWalkDirection(false,true);
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
+		CanWalkDirection(false, true);
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue,
+		                                 FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
 	}
-	if(OtherComp->ComponentHasTag( FName( "NoMoveTriggerDown")))
+	if (OtherComp->ComponentHasTag(FName("NoMoveTriggerDown")))
 	{
 		if (GetNetMode() == ENetMode::NM_Client)
 		{
-			CanWalkDirectionServer(true,false);
+			CanWalkDirectionServer(true, false);
 		}
-		CanWalkDirection(true,false);
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
+		CanWalkDirection(true, false);
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue,
+		                                 FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
 	}
-
-    
 }
 
 void AApesStrongTogetherCharacter::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
-	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+                                                UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-
-	if(!OtherComp->ComponentHasTag( FName( "NoMoveTriggerUp")) && !OtherComp->ComponentHasTag( FName( "NoMoveTriggerDown"))) return;
+	if (!OtherComp->ComponentHasTag(FName("NoMoveTriggerUp")) && !OtherComp->
+		ComponentHasTag(FName("NoMoveTriggerDown")))
+		return;
 
 	if (GetNetMode() == ENetMode::NM_Client)
 	{
-		CanWalkDirectionServer(true,true);
+		CanWalkDirectionServer(true, true);
 	}
-	CanWalkDirection(true,true);
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue, FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
+	CanWalkDirection(true, true);
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue,
+	                                 FString::Printf(TEXT("Overlapped Begin: %s"), *OtherActor->GetName()));
 }
 
 void AApesStrongTogetherCharacter::UpdateCharacter()
@@ -345,7 +351,7 @@ void AApesStrongTogetherCharacter::UpdateCharacter()
 	UpdateAnimation();
 
 	// Now setup the rotation of the controller based on the direction we are travelling
-	const FVector PlayerVelocity = GetVelocity();	
+	const FVector PlayerVelocity = GetVelocity();
 	float const TravelDirectionX = PlayerVelocity.X;
 	float const TravelDirectionY = PlayerVelocity.Y;
 	// Set the rotation so that the character faces his direction of travel.
@@ -359,7 +365,5 @@ void AApesStrongTogetherCharacter::UpdateCharacter()
 		{
 			Controller->SetControlRotation(FRotator(0.0f, 0.0f, 0.0f));
 		}
-		
 	}
-
 }
