@@ -148,7 +148,7 @@ public:
 	float  VoxelAnimationSpeed;
 
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
+	UFUNCTION(BlueprintCallable, Category="VoxelAnimation")
 	void SetVoxelMaterial(UStaticMesh* UStaticMesh, FName MaterialSlotName);
 	
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")

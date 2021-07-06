@@ -100,15 +100,9 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	SetReplicates(true);
 }
 
-void AApesStrongTogetherCharacter::SetVoxelMaterial_Implementation(UStaticMesh* UStaticMesh, FName MaterialSlotName)
-{
-	const int32 Index = UStaticMesh->GetMaterialIndexFromImportedMaterialSlotName(MaterialSlotName);
-	UMaterialInterface* MaterialInterface = UStaticMesh->GetMaterial(Index);
-	UStaticMesh->SetMaterial(Index,MaterialInterface);
-}
-
 void AApesStrongTogetherCharacter::BeginPlay()
 {
+	Super::BeginPlay();
 	GetWorld()->GetTimerManager().SetTimer(VoxelAnimationTimerHandle, this,
 	                                       &AApesStrongTogetherCharacter::VoxelAnimation, VoxelAnimationSpeed, true);
 }
@@ -146,6 +140,13 @@ void AApesStrongTogetherCharacter::VoxelAnimation()
 	default:
 		break;
 	}
+}
+
+void AApesStrongTogetherCharacter::SetVoxelMaterial(UStaticMesh* UStaticMesh, FName const MaterialSlotName)
+{
+	const int32 Index = UStaticMesh->GetMaterialIndexFromImportedMaterialSlotName(MaterialSlotName);
+	UMaterialInterface* MaterialInterface = UStaticMesh->GetMaterial(Index);
+	UStaticMesh->SetMaterial(Index, MaterialInterface);
 }
 
 
