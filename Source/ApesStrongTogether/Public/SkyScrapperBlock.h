@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 
 #include "Chaos/AABB.h"
+#include "Engine/UserDefinedStruct.h"
 #include "GameFramework/Actor.h"
 #include "SkyScrapperBlock.generated.h"
 
@@ -17,9 +18,13 @@ public:
 	// Sets default values for this actor's properties
 	ASkyScrapperBlock();
 
+	UPROPERTY(BlueprintReadWrite)
+	uint8 Lives;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
 
 public:	
 	// Called every frame
@@ -31,5 +36,10 @@ public:
 	
 	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Materials"))
 	TArray<UMaterial*> Materials;
-	
+
+	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="DestructMeshes"))
+	TArray<UStaticMesh*> ChosenDestructMeshes;
+
 };
+
+

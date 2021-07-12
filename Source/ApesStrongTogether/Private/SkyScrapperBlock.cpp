@@ -5,6 +5,8 @@
 
 #include "Net/UnrealNetwork.h"
 
+#define GET_VARIABLE_NAME(Variable) (#Variable)
+
 // Sets default values
 ASkyScrapperBlock::ASkyScrapperBlock()
 {

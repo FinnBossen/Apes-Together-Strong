@@ -6,10 +6,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="Added a function to get the percentage difference between two points.">
+      <change afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock1/rampageApeWalking-01.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock1/rampageApeWalking-03.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BlockDestructMeshes.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_2DSideScrollerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_2DSideScrollerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrappeDoor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrappeDoor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBlock.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBlock.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBuildingBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBuildingBP.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperFloor.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperFloor.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BuildingBackground.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BuildingBackground.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +55,13 @@
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/TriggerInterface.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/NewSkyScrapperFloorTrigger.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBuilding.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBuilding.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oXQRzvAkaNCA6QQ7NCyDYvVzie" />
@@ -359,6 +368,10 @@
       <workItem from="1624662481407" duration="1688000" />
       <workItem from="1625510213512" duration="7051000" />
       <workItem from="1625591749367" duration="811000" />
+      <workItem from="1625674326652" duration="4438000" />
+      <workItem from="1625760260915" duration="361000" />
+      <workItem from="1625760955938" duration="2026000" />
+      <workItem from="1626112213956" duration="2491000" />
     </task>
     <task id="LOCAL-00001" summary="Added a function to get the percentage difference between two points.">
       <created>1620490763211</created>
