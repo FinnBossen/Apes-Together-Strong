@@ -33,5 +33,36 @@ void ASkyScrapperBlock::Tick(float DeltaTime)
 
 }
 
+EDestructMeshes ASkyScrapperBlock::GetDestructType(const FString ObjectName)
+{
+	
+	if(ObjectName.Find("RampageBuildingBlock1"))
+	{
+		return EDestructMeshes::RampageBuildingBlock1;
+	}
+
+	if(ObjectName.Find("RampageBuildingBlock2"))
+	{
+		return EDestructMeshes::RampageBuildingBlock2;	
+	}
+
+	if(ObjectName.Find("RampageBuildingBlock3"))
+	{
+		return EDestructMeshes::RampageBuildingBlock3;
+	}
+
+	if(ObjectName.Find("RampageBuildingBlock4"))
+	{
+		return EDestructMeshes::RampageBuildingBlock4;
+	}
+
+	if(ObjectName.Find("RampageBuildingBlockDoor"))
+	{
+		return EDestructMeshes::RampageBuildingBlockDoor;
+	}
+
+	return EDestructMeshes::RampageBuildingBlock1;
+}
+
 
 

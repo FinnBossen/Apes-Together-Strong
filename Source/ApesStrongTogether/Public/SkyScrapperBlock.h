@@ -5,9 +5,18 @@
 #include "CoreMinimal.h"
 
 #include "Chaos/AABB.h"
-#include "Engine/UserDefinedStruct.h"
 #include "GameFramework/Actor.h"
 #include "SkyScrapperBlock.generated.h"
+
+UENUM(BlueprintType)
+enum class EDestructMeshes : uint8
+{
+	RampageBuildingBlock1 UMETA(DisplayName = "RampageBuildingBlock1"),
+	RampageBuildingBlock2 UMETA(DisplayName = "RampageBuildingBlock2"),
+	RampageBuildingBlock3 UMETA(DisplayName = "RampageBuildingBlock3"),
+	RampageBuildingBlock4 UMETA(DisplayName = "RampageBuildingBlock4"),
+	RampageBuildingBlockDoor UMETA(DisplayName = "RampageBuildingBlockDoor"),
+};
 
 UCLASS()
 class APESSTRONGTOGETHER_API ASkyScrapperBlock : public AActor
@@ -32,13 +41,15 @@ public:
 
 	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Meshes"))
 	TArray<UStaticMesh*> Meshes;
-
 	
 	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Materials"))
 	TArray<UMaterial*> Materials;
 
-	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="DestructMeshes"))
+	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable)
 	TArray<UStaticMesh*> ChosenDestructMeshes;
+
+	UFUNCTION(Category="Custom", BlueprintCallable)
+	static EDestructMeshes GetDestructType(FString ObjectName);
 
 };
 
