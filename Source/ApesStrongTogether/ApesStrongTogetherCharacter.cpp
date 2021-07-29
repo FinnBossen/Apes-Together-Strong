@@ -200,6 +200,9 @@ void AApesStrongTogetherCharacter::SetupPlayerInputComponent(class UInputCompone
 	}
 	PlayerInputComponent->BindAxis("MoveVertical", this, &AApesStrongTogetherCharacter::MoveVertical);
 	PlayerInputComponent->BindAction("Hit", IE_Pressed, this, &AApesStrongTogetherCharacter::Hit);
+	PlayerInputComponent->BindAction("Throw", IE_Pressed, this, &AApesStrongTogetherCharacter::Throw);
+	PlayerInputComponent->BindAction("Kick", IE_Pressed, this, &AApesStrongTogetherCharacter::Kick);
+	PlayerInputComponent->BindAction("Grab", IE_Pressed, this, &AApesStrongTogetherCharacter::Grab);
 
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &AApesStrongTogetherCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &AApesStrongTogetherCharacter::TouchStopped);
@@ -366,8 +369,11 @@ void AApesStrongTogetherCharacter::UpdateCharacter()
 
 void AApesStrongTogetherCharacter::Hit()
 {
-	FVector Loc = GetArrowComponent()->GetRelativeLocation();
-	FRotator Rot = GetArrowComponent()->GetRelativeRotation();;
+
+	GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(CamShake, 1.0f);
+	
+	FVector Loc = GetArrowComponent()->GetForwardVector();
+	FRotator Rot = GetArrowComponent()->GetComponentRotation();
 	FHitResult Hit;
 
 	FVector Start = Loc;
@@ -406,4 +412,25 @@ void AApesStrongTogetherCharacter::Hit()
 			}
 		}
 	}
+}
+
+void AApesStrongTogetherCharacter::Throw()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
+											FString::Printf(
+												TEXT("Triggered Throw")));
+}
+
+void AApesStrongTogetherCharacter::Grab()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
+											FString::Printf(
+												TEXT("Triggered Grab")));
+}
+
+void AApesStrongTogetherCharacter::Kick()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
+											FString::Printf(
+												TEXT("Triggered Kick")));
 }

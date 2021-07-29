@@ -6,14 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="Added a function to get the percentage difference between two points.">
+      <change afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_HittingShake.uasset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MyCameraShakeSourceComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultInput.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultInput.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_2DSideScrollerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_2DSideScrollerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBlock.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Blueprints/BP_SkyScrapperBlock.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/2DSideScrollerExampleMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +53,9 @@
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBuilding.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MyCameraShakeSourceComponent.h" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/HittingShake.cpp" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/HittingShake.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
     </changedPaths>
@@ -369,7 +370,7 @@
       <workItem from="1626112213956" duration="2826000" />
       <workItem from="1626970628808" duration="3070000" />
       <workItem from="1627392353375" duration="5900000" />
-      <workItem from="1627553361378" duration="6964000" />
+      <workItem from="1627553361378" duration="10970000" />
     </task>
     <task id="LOCAL-00001" summary="Added a function to get the percentage difference between two points.">
       <created>1620490763211</created>

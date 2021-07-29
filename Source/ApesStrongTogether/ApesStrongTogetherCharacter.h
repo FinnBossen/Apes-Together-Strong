@@ -130,6 +130,12 @@ protected:
 
 	void Hit();
 
+	void Throw();
+
+	void Grab();
+	
+	void Kick();
+
 	UCapsuleComponent* TriggerCapsule;
 	
 	UPROPERTY(Instanced, VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
@@ -137,6 +143,8 @@ protected:
 public:
 	AApesStrongTogetherCharacter();
 
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UMatineeCameraShake> CamShake;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom")
 	float Speed = 20.f;
