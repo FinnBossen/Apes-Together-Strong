@@ -47,7 +47,7 @@ public:
 
 	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable)
 	TArray<UStaticMesh*> ChosenDestructMeshes;
-
+	
 	UFUNCTION(Category="Custom", BlueprintCallable)
 	static EDestructMeshes GetDestructType(FString ObjectName);
 

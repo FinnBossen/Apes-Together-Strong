@@ -12,6 +12,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "Camera/CameraComponent.h"
+#include "Components/ArrowComponent.h"
 
 DEFINE_LOG_CATEGORY_STATIC(SideScrollerCharacter, Log, All);
 
@@ -31,14 +32,10 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	ApeMesh->SetIsReplicated(true);
 
 
-
-
 	// Use only Yaw from the controller and ignore the rest of the rotation.
 	bUseControllerRotationPitch = false;
 	bUseControllerRotationYaw = true;
 	bUseControllerRotationRoll = false;
-
-
 
 
 	// Set the size of our collision capsule.
@@ -120,7 +117,6 @@ void AApesStrongTogetherCharacter::VoxelAnimation()
 		else
 		{
 			CurrentVoxelFrame = 0;
-			
 		}
 		ApeMesh->SetStaticMesh(Idle[CurrentVoxelFrame]);
 		break;
@@ -128,8 +124,6 @@ void AApesStrongTogetherCharacter::VoxelAnimation()
 		if (CurrentVoxelFrame < WalkCycle.Num() - 1)
 		{
 			CurrentVoxelFrame++;
-	
-			
 		}
 		else
 		{
@@ -205,6 +199,7 @@ void AApesStrongTogetherCharacter::SetupPlayerInputComponent(class UInputCompone
 		PlayerInputComponent->BindAxis("MoveVertical", this, &AApesStrongTogetherCharacter::MoveVerticalServer);
 	}
 	PlayerInputComponent->BindAxis("MoveVertical", this, &AApesStrongTogetherCharacter::MoveVertical);
+	PlayerInputComponent->BindAction("Hit", IE_Pressed, this, &AApesStrongTogetherCharacter::Hit);
 
 	PlayerInputComponent->BindTouch(IE_Pressed, this, &AApesStrongTogetherCharacter::TouchStarted);
 	PlayerInputComponent->BindTouch(IE_Released, this, &AApesStrongTogetherCharacter::TouchStopped);
@@ -365,6 +360,50 @@ void AApesStrongTogetherCharacter::UpdateCharacter()
 		else if (TravelDirectionX > 0.0f)
 		{
 			Controller->SetControlRotation(FRotator(0.0f, 0.0f, 0.0f));
+		}
+	}
+}
+
+void AApesStrongTogetherCharacter::Hit()
+{
+	FVector Loc = GetArrowComponent()->GetRelativeLocation();
+	FRotator Rot = GetArrowComponent()->GetRelativeRotation();;
+	FHitResult Hit;
+
+	FVector Start = Loc;
+	FVector End = Start + (Rot.Vector() * TraceDistance);
+
+	FCollisionQueryParams TraceParams;
+	bool bHit = GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
+
+
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green,
+												FString::Printf(
+													TEXT("Triggered Hit")));
+	// DrawDebugLine(GetWorld(),Start, End, FColor::Green, false, 2.0);
+
+	// vllt cleaner
+	/*
+	if(!bHit) return;
+	AActor* Interactable = Hit.GetActor();
+	if(!Interactable) return;
+	if(Interactable == FocusedActor) return;
+	*/
+
+	if (bHit)
+	{
+		// DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(30,30,30), FColor::Purple, false, 2.0f);
+		AActor* Interactable = Hit.GetActor();
+
+		if (Interactable)
+		{
+			ASkyScrapperBlock* IsBlock = Cast<ASkyScrapperBlock>(Interactable);
+			if (IsBlock)
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
+				                                 FString::Printf(
+					                                 TEXT("Hittttttttttttttt: %s"), *Interactable->GetName()));
+			}
 		}
 	}
 }

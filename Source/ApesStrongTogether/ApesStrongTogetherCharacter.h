@@ -6,6 +6,8 @@
 
 #include "MainCamera.h"
 #include "PaperCharacter.h"
+#include "SkyScrapperBlock.h"
+
 #include "ApesStrongTogetherCharacter.generated.h"
 
 class UTextRenderComponent;
@@ -122,7 +124,11 @@ protected:
 
 	bool CanWalkDown = true;
 
+	float TraceDistance = 50;
+
 	int CurrentVoxelFrame = 0;
+
+	void Hit();
 
 	UCapsuleComponent* TriggerCapsule;
 	
@@ -130,6 +136,7 @@ protected:
     UStaticMeshComponent* ApeMesh;
 public:
 	AApesStrongTogetherCharacter();
+
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Custom")
 	float Speed = 20.f;
@@ -156,4 +163,5 @@ public:
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
 	void TriggerOneTimeAnim(EOneTimeAnimation EOneTimeAnimationEnum);
+	
 };
