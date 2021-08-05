@@ -4,6 +4,7 @@
 #include <mftransform.h>
 #include <sstream>
 
+#include "DrawDebugHelpers.h"
 #include "PaperFlipbookComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Net/UnrealNetwork.h"
@@ -372,20 +373,30 @@ void AApesStrongTogetherCharacter::Hit()
 
 	GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(CamShake, 1.0f);
 	
-	FVector Loc = GetArrowComponent()->GetForwardVector();
+	FVector Loc = GetActorLocation();
 	FRotator Rot = GetArrowComponent()->GetComponentRotation();
 	FHitResult Hit;
 
 	FVector Start = Loc;
 	FVector End = Start + (Rot.Vector() * TraceDistance);
 
+	
 	FCollisionQueryParams TraceParams;
+	TraceParams.AddIgnoredActor(this);
 	bool bHit = GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
 
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Purple,
+											FString::Printf(
+												TEXT("Triggered Hit")));
 
-	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green,
-												FString::Printf(
-													TEXT("Triggered Hit")));
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Purple,
+	FString::Printf(
+		TEXT("HitttttttttttttttPosition: %s"), *Loc.ToString()));
+
+
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Purple,
+FString::Printf(
+	TEXT("EnddddddddPosition: %s"), *End.ToString()));
 	// DrawDebugLine(GetWorld(),Start, End, FColor::Green, false, 2.0);
 
 	// vllt cleaner
@@ -396,6 +407,8 @@ void AApesStrongTogetherCharacter::Hit()
 	if(Interactable == FocusedActor) return;
 	*/
 
+	
+
 	if (bHit)
 	{
 		// DrawDebugBox(GetWorld(), Hit.ImpactPoint, FVector(30,30,30), FColor::Purple, false, 2.0f);
@@ -404,12 +417,13 @@ void AApesStrongTogetherCharacter::Hit()
 		if (Interactable)
 		{
 			ASkyScrapperBlock* IsBlock = Cast<ASkyScrapperBlock>(Interactable);
-			if (IsBlock)
+			if(IsBlock)
 			{
 				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
-				                                 FString::Printf(
-					                                 TEXT("Hittttttttttttttt: %s"), *Interactable->GetName()));
+												FString::Printf(
+													TEXT("Hittttttttttttttt Block: %s"), *Interactable->GetName()));
 			}
+			
 		}
 	}
 }

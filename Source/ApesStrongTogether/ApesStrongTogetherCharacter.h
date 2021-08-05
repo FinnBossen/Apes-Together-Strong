@@ -124,7 +124,7 @@ protected:
 
 	bool CanWalkDown = true;
 
-	float TraceDistance = 50;
+	float TraceDistance = 150;
 
 	int CurrentVoxelFrame = 0;
 
