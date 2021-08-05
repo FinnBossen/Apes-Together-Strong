@@ -419,6 +419,7 @@ FString::Printf(
 			ASkyScrapperBlock* IsBlock = Cast<ASkyScrapperBlock>(Interactable);
 			if(IsBlock)
 			{
+				IsBlock->IsHit(1);
 				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
 												FString::Printf(
 													TEXT("Hittttttttttttttt Block: %s"), *Interactable->GetName()));

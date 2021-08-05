@@ -51,6 +51,9 @@ public:
 	UFUNCTION(Category="Custom", BlueprintCallable)
 	static EDestructMeshes GetDestructType(FString ObjectName);
 
+	UFUNCTION(Category="Damage", BlueprintCallable)
+	static void IsHit(uint8 Damage);
+
 };
 
 

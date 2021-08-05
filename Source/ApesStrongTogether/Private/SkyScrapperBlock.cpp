@@ -64,5 +64,12 @@ EDestructMeshes ASkyScrapperBlock::GetDestructType(const FString ObjectName)
 	return EDestructMeshes::RampageBuildingBlock1;
 }
 
+void ASkyScrapperBlock::IsHit(uint8 Damage)
+{
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Purple,
+								FString::Printf(
+									TEXT("Block got Hit")));
+}
+
 
 
