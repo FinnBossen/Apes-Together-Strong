@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="Added a function to get the percentage difference between two points.">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" afterDir="false" />
     </list>
@@ -28,14 +27,24 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UE4Editor/Inc/ApesStrongTogether/SkyScrapperBlock.gen.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Public/MyCameraShakeSourceComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBuilding.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/Templates/Casts.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Camera/CameraActor.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/PlayerCameraManager.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Core/Public/Math/Vector.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/ActorReplication.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Microsoft/VC/v160/Microsoft.MakeFile.targets" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/Templates/Casts.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Windows Kits/10/Include/10.0.17763.0/um/winnt.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/World.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -46,16 +55,17 @@
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/TriggerInterface.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/NewSkyScrapperFloorTrigger.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBuilding.h" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBuilding.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/MyCameraShakeSourceComponent.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/HittingShake.cpp" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/HittingShake.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" />
+      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBuilding.cpp" />
+      <option value="$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/StaticMesh.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" />
       <option value="$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" />
-      <option value="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oXQRzvAkaNCA6QQ7NCyDYvVzie" />
@@ -69,7 +79,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3503826" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.32359356" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -370,7 +380,12 @@
       <workItem from="1627392353375" duration="5900000" />
       <workItem from="1627553361378" duration="10970000" />
       <workItem from="1627665581959" duration="3175000" />
-      <workItem from="1628184665948" duration="5403000" />
+      <workItem from="1628184665948" duration="6627000" />
+      <workItem from="1628538900595" duration="2774000" />
+      <workItem from="1628612936631" duration="5407000" />
+      <workItem from="1628629004598" duration="179000" />
+      <workItem from="1629142628140" duration="700000" />
+      <workItem from="1629143984535" duration="5845000" />
     </task>
     <task id="LOCAL-00001" summary="Added a function to get the percentage difference between two points.">
       <created>1620490763211</created>
@@ -408,29 +423,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
-          <line>103</line>
-          <option name="timeStamp" value="87" />
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp</url>
+          <line>88</line>
+          <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
-          <line>104</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
-          <line>102</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp</url>
-          <line>100</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h</url>
-          <line>53</line>
-          <option name="timeStamp" value="91" />
+          <url>file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp</url>
+          <line>89</line>
+          <option name="timeStamp" value="100" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

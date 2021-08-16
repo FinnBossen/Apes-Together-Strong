@@ -27,13 +27,23 @@ public:
 	// Sets default values for this actor's properties
 	ASkyScrapperBlock();
 
-	UPROPERTY(BlueprintReadWrite)
-	uint8 Lives;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Health")
+	float Lives;
+	
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category= "Mesh", Replicated)
+	UStaticMesh* CurrentMesh;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	
+	virtual void GetLifetimeReplicatedProps
+(
+	TArray< FLifetimeProperty > & OutLifetimeProps
+) const override;
 
+	UFUNCTION(Category="Custom", BlueprintCallable)
+	void ChangeDestructMesh();
 
 public:	
 	// Called every frame
@@ -51,8 +61,11 @@ public:
 	UFUNCTION(Category="Custom", BlueprintCallable)
 	static EDestructMeshes GetDestructType(FString ObjectName);
 
-	UFUNCTION(Category="Damage", BlueprintCallable)
-	static void IsHit(uint8 Damage);
+	
+
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="Damage")
+	void IsHit(float Damage);
 
 };
 
