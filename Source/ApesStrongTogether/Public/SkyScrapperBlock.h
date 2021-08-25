@@ -22,51 +22,53 @@ UCLASS()
 class APESSTRONGTOGETHER_API ASkyScrapperBlock : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ASkyScrapperBlock();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Health")
 	float Lives;
-	
+
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category= "Mesh", Replicated)
 	UStaticMesh* CurrentMesh;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
 	virtual void GetLifetimeReplicatedProps
-(
-	TArray< FLifetimeProperty > & OutLifetimeProps
-) const override;
+	(
+		TArray<FLifetimeProperty>& OutLifetimeProps
+	) const override;
 
-	UFUNCTION(Category="Custom", BlueprintCallable)
-	void ChangeDestructMesh();
 
-public:	
+	UPROPERTY(Instanced, VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"), Replicated)
+	UStaticMeshComponent* BlockMesh;
+
+	UPROPERTY(Instanced, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"), Replicated)
+	USceneComponent* RootSceneComponent;
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Meshes"))
 	TArray<UStaticMesh*> Meshes;
-	
-	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Materials"))
+
+	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable,
+		meta=(DisplayName="Materials"))
 	TArray<UMaterial*> Materials;
 
 	UPROPERTY(Category="Custom", BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable)
 	TArray<UStaticMesh*> ChosenDestructMeshes;
-	
+
 	UFUNCTION(Category="Custom", BlueprintCallable)
 	static EDestructMeshes GetDestructType(FString ObjectName);
-
-	
-
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="Damage")
 	void IsHit(float Damage);
 
+	UFUNCTION()
+	void ChangeDestructMesh();
 };
-
-

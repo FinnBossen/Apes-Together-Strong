@@ -80,6 +80,12 @@ protected:
 	UFUNCTION(Server, Reliable)
 	void MoveVerticalServer(float Value);
 
+	UFUNCTION(NetMulticast, Reliable)
+	void HitBlock(ASkyScrapperBlock* IsBlock, float Damage);
+
+	UFUNCTION(Server, Reliable)
+	void HitBlockServer(ASkyScrapperBlock* IsBlock, float Damage);
+
 	/** Called for Vertical input */
 	UFUNCTION(NetMulticast, Reliable)
 	void CanWalkDirection(bool Up, bool Down);

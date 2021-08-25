@@ -50,7 +50,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Trigger")
 	void TriggerNewFloor();
 
-
 	UFUNCTION(BlueprintNativeEvent,BlueprintCallable, Category="Trigger")
 	void ChangeTriggerPosition();
 

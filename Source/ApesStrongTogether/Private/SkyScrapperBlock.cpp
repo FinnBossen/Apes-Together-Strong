@@ -18,6 +18,14 @@ ASkyScrapperBlock::ASkyScrapperBlock()
 	CurrentMesh = nullptr;
 
 	Lives = 10;
+
+	RootSceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootScene"));
+	RootComponent = RootSceneComponent;
+	RootComponent->SetIsReplicated(true);
+	
+	BlockMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BlockMesh"));
+	BlockMesh->AttachToComponent(RootSceneComponent, FAttachmentTransformRules::SnapToTargetIncludingScale);
+	BlockMesh->SetIsReplicated(true);
 }
 
 
@@ -34,7 +42,10 @@ void ASkyScrapperBlock::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 
 	//Do replications on properties
 	DOREPLIFETIME(ASkyScrapperBlock , CurrentMesh);
+	DOREPLIFETIME(ASkyScrapperBlock , BlockMesh);
+	DOREPLIFETIME(ASkyScrapperBlock , RootSceneComponent);
 }
+
 
 void ASkyScrapperBlock::ChangeDestructMesh()
 {
@@ -44,7 +55,7 @@ void ASkyScrapperBlock::ChangeDestructMesh()
 		return;
 	}
 
-	CurrentMesh = ChosenDestructMeshes[0];
+	BlockMesh->SetStaticMesh(ChosenDestructMeshes[0]);
 }
 
 
@@ -93,6 +104,7 @@ void ASkyScrapperBlock::IsHit_Implementation(float Damage)
 	const FString DamageStr = FString::SanitizeFloat(Damage);
 	const FString LivesStr = FString::SanitizeFloat(Lives);
 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Green, FString::Printf(TEXT("Has Lives lost Damage %s, now has only %s lives"), *DamageStr,*LivesStr));
+
 	ChangeDestructMesh();
 }
 

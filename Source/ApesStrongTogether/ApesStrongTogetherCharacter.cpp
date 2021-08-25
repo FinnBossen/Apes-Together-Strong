@@ -25,7 +25,7 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	TriggerCapsule = GetCapsuleComponent();
 
 	ApeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CharacterMesh"));
-
+	
 	ApeMesh->AttachToComponent(TriggerCapsule, FAttachmentTransformRules::SnapToTargetIncludingScale);
 
 	ApeMesh->SetRelativeLocation(FVector(-10, 0, -90));
@@ -105,6 +105,15 @@ void AApesStrongTogetherCharacter::BeginPlay()
 	                                       &AApesStrongTogetherCharacter::VoxelAnimation, VoxelAnimationSpeed, true);
 }
 
+void AApesStrongTogetherCharacter::HitBlock_Implementation(ASkyScrapperBlock* IsBlock,  float Damage)
+{
+	IsBlock->IsHit(Damage);
+}
+
+void AApesStrongTogetherCharacter::HitBlockServer_Implementation(ASkyScrapperBlock* IsBlock, float Damage)
+{
+	HitBlock_Implementation(IsBlock, Damage);
+}
 
 void AApesStrongTogetherCharacter::VoxelAnimation()
 {
@@ -419,7 +428,15 @@ FString::Printf(
 			ASkyScrapperBlock* IsBlock = Cast<ASkyScrapperBlock>(Interactable);
 			if(IsBlock)
 			{
-				IsBlock->IsHit(1);
+
+				HitBlock(IsBlock, 1);
+
+				if (GetNetMode() == ENetMode::NM_Client)
+				{
+					HitBlockServer(IsBlock, 1);
+				}
+
+				//IsBlock->IsHit(1);
 				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
 												FString::Printf(
 													TEXT("Hittttttttttttttt Block: %s"), *Interactable->GetName()));
