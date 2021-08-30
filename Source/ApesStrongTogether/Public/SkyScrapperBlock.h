@@ -4,6 +4,9 @@
 
 #include "CoreMinimal.h"
 
+#include <map>
+#include <unordered_map>
+
 #include "Chaos/AABB.h"
 #include "GameFramework/Actor.h"
 #include "SkyScrapperBlock.generated.h"
@@ -28,7 +31,7 @@ public:
 	ASkyScrapperBlock();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Health")
-	float Lives;
+	float StartLives = 10;
 
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category= "Mesh", Replicated)
 	UStaticMesh* CurrentMesh;
@@ -42,6 +45,11 @@ protected:
 		TArray<FLifetimeProperty>& OutLifetimeProps
 	) const override;
 
+	float CurrentLives;
+	
+	std::map<float, int> ChangeMeshThresholds;
+
+	std::pair<float, int> ThresholdBefore = std::make_pair(0.0f, 0);
 
 	UPROPERTY(Instanced, VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"), Replicated)
 	UStaticMeshComponent* BlockMesh;
