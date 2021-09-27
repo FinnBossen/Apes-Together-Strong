@@ -139,15 +139,34 @@ protected:
 	void Throw();
 
 	void Grab();
-	
+
 	void Kick();
 
 	UCapsuleComponent* TriggerCapsule;
-	
+
 	UPROPERTY(Instanced, VisibleAnywhere, BlueprintReadWrite, meta=(AllowPrivateAccess = "true"))
-    UStaticMeshComponent* ApeMesh;
+	UStaticMeshComponent* ApeMesh;
+
+	std::vector<float> MenuMovementArray;
+
+	void MovementMenu();
+
+	float LastMenuMovement = 0;
+
+	/* Handle to manage the voxel Animation timer */
+	FTimerHandle MenuMovementTimerHandle;
 public:
 	AApesStrongTogetherCharacter();
+
+	UPROPERTY(EditAnywhere)
+	bool IsStartMenuCharacter = false;
+
+	UFUNCTION(BlueprintCallable, Category="MenuWalking")
+	void MoveCharacterToStartMenuOption(FVector2D PositionWidgetOnScreen,
+	                                    FVector2D  PositionApeCharacterOnScreen);
+	
+	UFUNCTION(BlueprintCallable, Category="MenuWalking")
+	void StopMoveCharacterToStartMenuOption();
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<UMatineeCameraShake> CamShake;
@@ -158,24 +177,25 @@ public:
 	FORCEINLINE class UCameraComponent* GetSideViewCameraComponent() const { return SideViewCameraComponent; }
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
-	
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="WalkCycle"),Category="VoxelAnimation")
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="WalkCycle"),
+		Category="VoxelAnimation")
 	TArray<UStaticMesh*> WalkCycle;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Idle"),Category="VoxelAnimation")
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, AssetRegistrySearchable, meta=(DisplayName="Idle"),
+		Category="VoxelAnimation")
 	TArray<UStaticMesh*> Idle;
 
-	UPROPERTY( EditAnywhere)
-	float  VoxelAnimationSpeed;
+	UPROPERTY(EditAnywhere)
+	float VoxelAnimationSpeed;
 
 
 	UFUNCTION(BlueprintCallable, Category="VoxelAnimation")
 	void SetVoxelMaterial(UStaticMesh* UStaticMesh, FName MaterialSlotName);
-	
+
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
 	void ChangeCurrentAnimCycle(EAnimationCycles EAnimationCyclesEnum);
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category="VoxelAnimation")
 	void TriggerOneTimeAnim(EOneTimeAnimation EOneTimeAnimationEnum);
-	
 };

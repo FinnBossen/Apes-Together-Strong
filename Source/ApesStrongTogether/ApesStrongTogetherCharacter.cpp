@@ -25,7 +25,7 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	TriggerCapsule = GetCapsuleComponent();
 
 	ApeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CharacterMesh"));
-	
+
 	ApeMesh->AttachToComponent(TriggerCapsule, FAttachmentTransformRules::SnapToTargetIncludingScale);
 
 	ApeMesh->SetRelativeLocation(FVector(-10, 0, -90));
@@ -96,16 +96,54 @@ AApesStrongTogetherCharacter::AApesStrongTogetherCharacter()
 	bReplicates = true;
 	ACharacter::SetReplicateMovement(false);
 	SetReplicates(true);
+
+}
+
+void AApesStrongTogetherCharacter::MoveCharacterToStartMenuOption(const FVector2D  PositionWidgetOnScreen,
+                                                                  const FVector2D  PositionApeCharacterOnScreen)
+{
+	const float DifferenceBetweenTwoPosition = PositionApeCharacterOnScreen.Y - PositionWidgetOnScreen.Y;
+
+	if ( (DifferenceBetweenTwoPosition > -10 && DifferenceBetweenTwoPosition < 10))
+	{
+		LastMenuMovement = 0;
+	}
+	else if(DifferenceBetweenTwoPosition > 10)
+	{
+		LastMenuMovement = 1;
+	}else if(DifferenceBetweenTwoPosition < -10)
+	{
+		LastMenuMovement = -1;
+	}
+}
+
+void AApesStrongTogetherCharacter::StopMoveCharacterToStartMenuOption()
+{
+	LastMenuMovement = 0;
+}
+
+void AApesStrongTogetherCharacter::MovementMenu()
+{
+	const FString LastMenuMovementString = FString::SanitizeFloat(LastMenuMovement);
+	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Blue,
+									FString::Printf(TEXT("MoveMenu with: %s"), *LastMenuMovementString));
+	MoveVertical(LastMenuMovement);
 }
 
 void AApesStrongTogetherCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+	
 	GetWorld()->GetTimerManager().SetTimer(VoxelAnimationTimerHandle, this,
 	                                       &AApesStrongTogetherCharacter::VoxelAnimation, VoxelAnimationSpeed, true);
+	if(IsStartMenuCharacter)
+	{
+		GetWorld()->GetTimerManager().SetTimer(MenuMovementTimerHandle, this, &AApesStrongTogetherCharacter::MovementMenu, VoxelAnimationSpeed, true);	
+	}
+	
 }
 
-void AApesStrongTogetherCharacter::HitBlock_Implementation(ASkyScrapperBlock* IsBlock,  float Damage)
+void AApesStrongTogetherCharacter::HitBlock_Implementation(ASkyScrapperBlock* IsBlock, float Damage)
 {
 	IsBlock->IsHit(Damage);
 }
@@ -379,9 +417,8 @@ void AApesStrongTogetherCharacter::UpdateCharacter()
 
 void AApesStrongTogetherCharacter::Hit()
 {
-
 	GetWorld()->GetFirstPlayerController()->PlayerCameraManager->StartCameraShake(CamShake, 1.0f);
-	
+
 	FVector Loc = GetActorLocation();
 	FRotator Rot = GetArrowComponent()->GetComponentRotation();
 	FHitResult Hit;
@@ -389,23 +426,23 @@ void AApesStrongTogetherCharacter::Hit()
 	FVector Start = Loc;
 	FVector End = Start + (Rot.Vector() * TraceDistance);
 
-	
+
 	FCollisionQueryParams TraceParams;
 	TraceParams.AddIgnoredActor(this);
 	bool bHit = GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, TraceParams);
 
 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Purple,
-											FString::Printf(
-												TEXT("Triggered Hit")));
+	                                 FString::Printf(
+		                                 TEXT("Triggered Hit")));
 
 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Purple,
-	FString::Printf(
-		TEXT("HitttttttttttttttPosition: %s"), *Loc.ToString()));
+	                                 FString::Printf(
+		                                 TEXT("HitttttttttttttttPosition: %s"), *Loc.ToString()));
 
 
 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Purple,
-FString::Printf(
-	TEXT("EnddddddddPosition: %s"), *End.ToString()));
+	                                 FString::Printf(
+		                                 TEXT("EnddddddddPosition: %s"), *End.ToString()));
 	// DrawDebugLine(GetWorld(),Start, End, FColor::Green, false, 2.0);
 
 	// vllt cleaner
@@ -416,7 +453,6 @@ FString::Printf(
 	if(Interactable == FocusedActor) return;
 	*/
 
-	
 
 	if (bHit)
 	{
@@ -426,9 +462,8 @@ FString::Printf(
 		if (Interactable)
 		{
 			ASkyScrapperBlock* IsBlock = Cast<ASkyScrapperBlock>(Interactable);
-			if(IsBlock)
+			if (IsBlock)
 			{
-
 				HitBlock(IsBlock, 1);
 
 				if (GetNetMode() == ENetMode::NM_Client)
@@ -438,10 +473,9 @@ FString::Printf(
 
 				//IsBlock->IsHit(1);
 				GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
-												FString::Printf(
-													TEXT("Hittttttttttttttt Block: %s"), *Interactable->GetName()));
+				                                 FString::Printf(
+					                                 TEXT("Hittttttttttttttt Block: %s"), *Interactable->GetName()));
 			}
-			
 		}
 	}
 }
@@ -449,20 +483,20 @@ FString::Printf(
 void AApesStrongTogetherCharacter::Throw()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
-											FString::Printf(
-												TEXT("Triggered Throw")));
+	                                 FString::Printf(
+		                                 TEXT("Triggered Throw")));
 }
 
 void AApesStrongTogetherCharacter::Grab()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
-											FString::Printf(
-												TEXT("Triggered Grab")));
+	                                 FString::Printf(
+		                                 TEXT("Triggered Grab")));
 }
 
 void AApesStrongTogetherCharacter::Kick()
 {
 	GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red,
-											FString::Printf(
-												TEXT("Triggered Kick")));
+	                                 FString::Printf(
+		                                 TEXT("Triggered Kick")));
 }
