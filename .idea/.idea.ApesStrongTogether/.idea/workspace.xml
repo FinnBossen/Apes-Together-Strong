@@ -9,13 +9,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06173a86-3124-41a4-a040-87c9da8b8986" name="Default Changelist" comment="Added a function to get the percentage difference between two points.">
-      <change afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/Private/CustomUserWidget.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ApesStrongTogether/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ApesStrongTogether.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/ApesStrongTogether.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock1/BuildingBlock1_Damage2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock1/BuildingBlock1_Damage2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock1/RampageBuildingBlock1_Damage1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock1/RampageBuildingBlock1_Damage1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock1/RampageBuildingBlock1_Damage3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock1/RampageBuildingBlock1_Damage3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock2/RampageBuildingBlock2_Damage1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock2/RampageBuildingBlock2_Damage1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock2/RampageBuildingBlock2_Damage2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock2/RampageBuildingBlock2_Damage2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock2/RampageBuildingBlock2_Damage3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock2/RampageBuildingBlock2_Damage3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock3/RampageBuildingBlock3_Damag2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock3/RampageBuildingBlock3_Damag2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock3/RampageBuildingBlock3_Damage1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock3/RampageBuildingBlock3_Damage1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock3/RampageBuildingBlock3_Damage2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock3/RampageBuildingBlock3_Damage2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock3/RampageBuildingBlock3_Damage3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock3/RampageBuildingBlock3_Damage3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock4/RampageBuildingBlock4_Damag2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock4/RampageBuildingBlock4_Damag2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock4/RampageBuildingBlock4_Damage1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock4/RampageBuildingBlock4_Damage1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock4/RampageBuildingBlock4_Damage2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock4/RampageBuildingBlock4_Damage2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock4/RampageBuildingBlock4_Damage3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlock4/RampageBuildingBlock4_Damage3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlockDoor/RampageBuildingBlockDoor_Damag2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlockDoor/RampageBuildingBlockDoor_Damag2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlockDoor/RampageBuildingBlockDoor_Damage1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlockDoor/RampageBuildingBlockDoor_Damage1.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlockDoor/RampageBuildingBlockDoor_Damage2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlockDoor/RampageBuildingBlockDoor_Damage2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlockDoor/RampageBuildingBlockDoor_Damage3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScroller/Objs/DamageBlockDoor/RampageBuildingBlockDoor_Damage3.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/Game.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/Game.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/StartMenu.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Maps/StartMenu.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Start_Menu/Widgets/Button_Widget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Start_Menu/Widgets/Button_Widget.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Start_Menu/Widgets/MainMenu_Widget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/2DSideScrollerCPP/Start_Menu/Widgets/MainMenu_Widget.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedExternalUILibrary.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedExternalUILibrary.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedFriendsGameInstance.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedFriendsGameInstance.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedFriendsInterface.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedFriendsInterface.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedFriendsLibrary.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedFriendsLibrary.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedGameSession.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedGameSession.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedIdentityLibrary.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedIdentityLibrary.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedSessionsLibrary.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedSessionsLibrary.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedVoiceLibrary.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/AdvancedVoiceLibrary.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/BlueprintDataDefinitions.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/BlueprintDataDefinitions.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/CancelFindSessionsCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/CancelFindSessionsCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/CreateSessionCallbackProxyAdvanced.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/CreateSessionCallbackProxyAdvanced.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/EndSessionCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/EndSessionCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/FindFriendSessionCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/FindFriendSessionCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/FindSessionsCallbackProxyAdvanced.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/FindSessionsCallbackProxyAdvanced.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/GetFriendsCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/GetFriendsCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/GetRecentPlayersCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/GetRecentPlayersCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/GetUserPrivilegeCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/GetUserPrivilegeCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/LoginUserCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/LoginUserCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/LogoutUserCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/LogoutUserCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/SendFriendInviteCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/SendFriendInviteCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/Timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/Timestamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/UpdateSessionCallbackProxyAdvanced.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSessions/UpdateSessionCallbackProxyAdvanced.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/AdvancedSteamFriendsLibrary.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/AdvancedSteamFriendsLibrary.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/AdvancedSteamWorkshopLibrary.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/AdvancedSteamWorkshopLibrary.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/SteamRequestGroupOfficersCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/SteamRequestGroupOfficersCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/SteamWSRequestUGCDetailsCallbackProxy.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/SteamWSRequestUGCDetailsCallbackProxy.generated.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/Timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/AdvancedSessions/AdvancedSteamSessions/Intermediate/Build/Win64/UE4Editor/Inc/AdvancedSteamSessions/Timestamp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,26 +77,17 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UE4Editor/Inc/ApesStrongTogether/SkyScrapperBlock.gen.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Public/MyCameraShakeSourceComponent.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBuilding.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/Actor.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Windows Kits/10/Include/10.0.17763.0/ucrt/stdio.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Camera/CameraActor.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/PlayerCameraManager.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Core/Public/Math/Vector.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Private/ActorReplication.cpp" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Microsoft/VC/v160/Microsoft.MakeFile.targets" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/CoreUObject/Public/Templates/Casts.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Windows Kits/10/Include/10.0.17763.0/ucrt/stdio.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Windows Kits/10/Include/10.0.17763.0/um/winnt.h" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Engine/Classes/Engine/World.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Intermediate/Build/Win64/UE4Editor/Inc/ApesStrongTogether/SkyScrapperBlock.gen.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/ApesStrongTogetherCharacter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/MainCamera.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBlock.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Private/SkyScrapperBuilding.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Public/MainCamera.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Epic Games/UE_4.26/Engine/Source/Runtime/Core/Public/HAL/Platform.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Public/MyCameraShakeSourceComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ApesStrongTogether/Public/SkyScrapperBlock.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -87,17 +121,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.45965984" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="XThreadsFramesViewSplitterKey" value="0.3523267" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false"
+  }
+}]]></component>
   <component name="RunManager" selected="C++ Project.ApesStrongTogether">
     <configuration name="ApesStrongTogether" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -410,6 +438,8 @@
       <workItem from="1632651501996" duration="7111000" />
       <workItem from="1632676952235" duration="733000" />
       <workItem from="1632763826804" duration="6617000" />
+      <workItem from="1639014590126" duration="3000" />
+      <workItem from="1668442870078" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="Added a function to get the percentage difference between two points.">
       <created>1620490763211</created>
@@ -424,6 +454,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
@@ -436,7 +467,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
