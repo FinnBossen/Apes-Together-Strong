@@ -1,6 +1,7 @@
-# Apes-Together-Strong
+# Protoype gameplay 
+https://youtu.be/XOg_ApVilW8?si=aupv_yrefm4ThUUg
 
-Protoype gameplay: https://youtu.be/XOg_ApVilW8?si=aupv_yrefm4ThUUg
+# Apes-Together-Strong
 
 # Brackeys GameJam 2021.1
 Prototype Idea I created for the Brackeys GameJam.
