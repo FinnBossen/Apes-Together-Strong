@@ -1,6 +1,8 @@
 # Apes-Together-Strong
+
 Protoype gameplay: https://youtu.be/XOg_ApVilW8?si=aupv_yrefm4ThUUg
-Brackeys GameJam 2021.1
+
+# Brackeys GameJam 2021.1
 Prototype Idea I created for the Brackeys GameJam.
 It is a game inspired by Rampage where two giant apes in multiplayer,
 climb a giant skyscraper.
